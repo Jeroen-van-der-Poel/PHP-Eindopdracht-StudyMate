@@ -53,7 +53,7 @@
             </li>
 
             <li class="nav-itemx">
-                <a href="/Evenementen" class="nav-linkx">
+                <a href="/#" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-campground"></span></i>
                     <span class="link-text">Admin Area</span>
                 </a>
