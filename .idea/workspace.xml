@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/PHP_Eindopdracht/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -113,6 +113,7 @@
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZRoxWeBroNA2Zib0JW1ywbQavR" />
@@ -124,7 +125,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -137,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584811513765</updated>
       <workItem from="1584811516075" duration="11000" />
+      <workItem from="1584822162872" duration="1131000" />
     </task>
     <servers />
   </component>
