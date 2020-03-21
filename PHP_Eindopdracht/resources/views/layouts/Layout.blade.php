@@ -19,7 +19,7 @@
         <ul class="navbarx-nav">
             <li class="logo">
                 <a href="/#" class="nav-linkx">
-                    <span class="link-text logo-text"><h5>StudyMate</h5></span>
+                    <span class="link-text logo-text pt-2"><h5>StudyMate</h5></span>
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -47,21 +47,21 @@
 
             <li class="nav-itemx">
                 <a href="/#" class="nav-linkx">
-                    <i class="material-icons"><span class="fas fa-comment"></span></i>
+                    <i class="material-icons"><span class="fas fa-chart-line"></span></i>
                     <span class="link-text">Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-itemx">
                 <a href="/#" class="nav-linkx">
-                    <i class="material-icons"><span class="fas fa-campground"></span></i>
+                    <i class="material-icons"><span class="fas fa-tools"></span></i>
                     <span class="link-text">Admin Area</span>
                 </a>
             </li>
 
             <li class="nav-itemx">
                 <a href="/#" class="nav-linkx">
-                    <i class="material-icons"><span class="fas fa-camera"></span></i>
+                    <i class="material-icons"><span class="fas fa-tasks"></span></i>
                     <span class="link-text">Deadline Manager</span>
                 </a>
             </li>
