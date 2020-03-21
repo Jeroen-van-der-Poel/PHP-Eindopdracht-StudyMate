@@ -49661,8 +49661,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\jeroe\OneDrive\Documents\GitHub\PHP_Eindopdracht\PHP_Eindopdracht\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\jeroe\OneDrive\Documents\GitHub\PHP_Eindopdracht\PHP_Eindopdracht\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
