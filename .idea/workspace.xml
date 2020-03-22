@@ -125,7 +125,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Course" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\views\Course" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -141,6 +146,7 @@
       <workItem from="1584822162872" duration="1251000" />
       <workItem from="1584877605415" duration="12000" />
       <workItem from="1584882815924" duration="2108000" />
+      <workItem from="1584903311447" duration="1095000" />
     </task>
     <servers />
   </component>
