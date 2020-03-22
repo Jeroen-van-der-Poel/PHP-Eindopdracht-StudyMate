@@ -49,6 +49,11 @@
                         @enderror
                     </div>
 
+                    <div class="form-group row">
+                        <input id="has_taught" type="checkbox" class="form-control" name="has_taught" value="1" style="height: 20px; width: 18px; ">
+                        <label for="has_taught" class="pl-0">Heeft jouw les gegeven </label>
+                    </div>
+
                     <div class="form-group row pt-4 pb-5">
                         <button class="btn btn-primary">Docent Opslaan</button>
                     </div>

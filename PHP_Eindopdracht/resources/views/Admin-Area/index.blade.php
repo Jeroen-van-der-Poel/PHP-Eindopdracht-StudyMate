@@ -31,7 +31,7 @@
                                 <td>{{ $teacher->name }}</td>
                                 <td>{{ $teacher->email }}</td>
                                 <td>{{ $teacher->phone_number }}</td>
-                                <td>{{ $teacher->has_taught }}</td>
+                                <td>{{ $teacher->HasTaught() }}</td>
 
                                 <td>
                                     <form action="/#" method="GET">
