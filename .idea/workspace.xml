@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654a567f-eab6-415b-99cf-1004c5007709" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Teacher/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Teacher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

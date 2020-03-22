@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row pb-4  pt-4">
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
                     <div class="card-header d-flex justify-content-between">
