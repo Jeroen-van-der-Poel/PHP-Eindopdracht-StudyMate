@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/addTeacher', 'TeacherController@create');
+Route::post('/teacher', 'TeacherController@store');

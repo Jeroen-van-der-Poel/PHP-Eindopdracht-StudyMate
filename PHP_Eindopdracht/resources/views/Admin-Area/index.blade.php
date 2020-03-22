@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area"></i>
-                        Docenten overzicht
+                    <div class="card-header d-flex justify-content-between">
+                        <span><i class="fas fa-users"></i>Docenten overzicht</span>
+                        <span><a href="/addTeacher">Docenten Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
 
@@ -34,21 +34,17 @@
                                 <td>{{ $teacher->has_taught }}</td>
 
                                 <td>
+                                    <form action="/#" method="GET">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-success d-flex float-right" value="Wijzigen">
+                                        </div>
+                                    </form>
 
-                                    {{--                                <form action="/EditEvenement/{{$event->id}}" method="GET">
-                                                                        <div class="form-group">
-                                                                            <input type="submit" class="btn btn-success d-flex float-right" value="Wijzigen">
-                                                                        </div>
-                                                                    </form>
-
-                                                                    <form class="float-right" method="POST" action="/admin-area/events/{{$event->id}}">
-                                                                        {{ csrf_field() }}
-                                                                        {{ method_field('DELETE') }}
-
-                                                                        <div class="form-group">
-                                                                            <input type="submit" class="btn btn-danger d-flex float-right delete-event" value="Weigeren">
-                                                                        </div>
-                                                                    </form>--}}
+                                    <form class="float-right" method="POST" action="/#">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-danger d-flex float-right delete-event" value="Verwijderen">
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
