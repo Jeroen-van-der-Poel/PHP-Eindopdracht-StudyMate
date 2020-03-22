@@ -7,7 +7,7 @@
                 <div class="table-responsive">
                     <div class="card-header d-flex justify-content-between">
                         <span><i class="fas fa-users"></i>Docenten overzicht</span>
-                        <span><a href="/addTeacher">Docenten Toevoegen</a></span>
+                        <span><a href="/addTeacher">Docent Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
 
@@ -40,9 +40,12 @@
                                         </div>
                                     </form>
 
-                                    <form class="float-right" method="POST" action="/#">
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-danger d-flex float-right delete-event" value="Verwijderen">
+                                    <form class="float-right d-flex pr-2" method="POST" action="/teacher/{{$teacher->id}}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <div class="form-group d-flex">
+                                            <input type="submit" class="btn btn-danger delete-user" value="verwijderen">
                                         </div>
                                     </form>
                                 </td>

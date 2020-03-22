@@ -26,3 +26,4 @@ Route::get('/addTeacher', 'TeacherController@create');
 Route::post('/teacher', 'TeacherController@store');
 Route::get('/editTeacher/{id}', 'TeacherController@edit');
 Route::patch('/editTeacher/{id}', 'TeacherController@update');
+Route::delete('/teacher/{id}', 'TeacherController@destroy')->name('teacher.destroyTeacher');

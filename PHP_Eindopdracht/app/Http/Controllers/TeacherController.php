@@ -48,4 +48,11 @@ class TeacherController extends Controller
 
         return redirect('/admin');
     }
+
+    public function destroy($id){
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+
+        return redirect("/admin");
+    }
 }
