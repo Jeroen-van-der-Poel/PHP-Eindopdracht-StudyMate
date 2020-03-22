@@ -86,17 +86,18 @@
                                 <td>{{ $course->test_method}}</td>
                                 <td>Nog niks</td>
                                 <td>
-                                    <form action="/#" method="GET">
+                                    <form action="/editCourse/{{$course->id}}" method="GET">
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-success d-flex float-right" value="Wijzigen">
                                         </div>
                                     </form>
 
-                                    <form class="float-right" method="POST" action="/#">
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-danger d-flex float-right delete-course" value="Verwijderen">
-                                        </div>
-                                    </form>
+                                    <form class="float-right d-flex pr-2" method="POST" action="/course/{{$course->id}}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <div class="form-group d-flex">
+                                            <input type="submit" class="btn btn-danger delete-course" value="verwijderen">
                                 </td>
                             </tr>
                         @endforeach

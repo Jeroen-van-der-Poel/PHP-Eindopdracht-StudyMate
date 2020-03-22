@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
 Route::get('/addCourse', 'CourseController@create');
 Route::post('/course', 'CourseController@store');
+Route::get('/editCourse/{id}', 'CourseController@edit');
+Route::patch('/editCourse/{id}', 'CourseController@update');
+Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');
