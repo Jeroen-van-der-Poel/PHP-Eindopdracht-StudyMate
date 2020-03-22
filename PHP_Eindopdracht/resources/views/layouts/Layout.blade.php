@@ -53,7 +53,7 @@
             </li>
 
             <li class="nav-itemx">
-                <a href="/#" class="nav-linkx">
+                <a href="/admin" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-tools"></span></i>
                     <span class="link-text">Admin Area</span>
                 </a>
