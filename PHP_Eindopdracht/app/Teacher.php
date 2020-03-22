@@ -12,7 +12,7 @@ class Teacher extends Model
         if ($this->has_taught == 1){
             return "Ja";
         }else{
-            return "nee";
+            return "Nee";
         }
     }
 

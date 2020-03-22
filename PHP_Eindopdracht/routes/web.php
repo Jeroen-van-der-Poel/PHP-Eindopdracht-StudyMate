@@ -24,3 +24,5 @@ Route::get('/admin', 'AdminController@index');
 
 Route::get('/addTeacher', 'TeacherController@create');
 Route::post('/teacher', 'TeacherController@store');
+Route::get('/editTeacher/{id}', 'TeacherController@edit');
+Route::patch('/editTeacher/{id}', 'TeacherController@update');

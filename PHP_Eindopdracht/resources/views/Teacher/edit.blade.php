@@ -1,22 +1,21 @@
 @extends('layouts.layout')
-
 @section('content')
-
     <div class="container pt-1 pb-5">
-        <form action="/teacher" enctype="multipart/form-data" method="post">
+        <form action="/editTeacher/{{ $teacher->id }}" enctype="multipart/form-data" method="post">
             @csrf
+            @method('PATCH')
 
             <div class="">
                 <div class="col-6 offset-3">
 
                     <div class="form-group row">
-                        <h2 class="pl-0 pt-5">Aanmaken evenement</h2>
+                        <h2 class="pl-0 pt-5">Wijzig gegevens</h2>
                     </div>
 
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label pl-0">Naam</label>
 
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? $teacher->name }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -28,7 +27,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-md-4 col-form-label pl-0">Email</label>
 
-                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $teacher->email }}" required autocomplete="email" autofocus>
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -40,7 +39,7 @@
                     <div class="form-group row">
                         <label for="phone_number" class="col-md-4 col-form-label pl-0">Telefoonnummer</label>
 
-                        <input id="phone_number" type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
+                        <input id="phone_number" type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') ?? $teacher->phone_number }}" required autocomplete="phone_number" autofocus>
 
                         @error('phone_number')
                         <span class="invalid-feedback" role="alert">
@@ -50,12 +49,12 @@
                     </div>
 
                     <div class="form-group row pt-3">
-                        <input id="has_taught" type="checkbox" class="form-control" name="has_taught"  style="height: 20px; width: 18px;" value="1" {{  ($teacher->has_taught == 1 ? ' checked' : '') }}>
+                        <input id="has_taught" type="checkbox" class="form-control" name="has_taught" value="1" style="height: 20px; width: 18px; ">
                         <label for="has_taught" class="pl-0">Heeft jouw les gegeven </label>
                     </div>
 
                     <div class="form-group row pt-4 pb-5">
-                        <button class="btn btn-primary">Docent Opslaan</button>
+                        <button class="btn btn-primary">Docent wijzigen</button>
                     </div>
 
                 </div>

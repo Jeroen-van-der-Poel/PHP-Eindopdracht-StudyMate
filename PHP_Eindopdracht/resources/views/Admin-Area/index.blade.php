@@ -34,7 +34,7 @@
                                 <td>{{ $teacher->HasTaught() }}</td>
 
                                 <td>
-                                    <form action="/#" method="GET">
+                                    <form action="/editTeacher/{{$teacher->id}}" method="GET">
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-success d-flex float-right" value="Wijzigen">
                                         </div>

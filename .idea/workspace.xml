@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654a567f-eab6-415b-99cf-1004c5007709" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Teacher/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Teacher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/database/migrations/2020_03_22_132205_create_teachers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/database/migrations/2020_03_22_132205_create_teachers_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Teacher/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Teacher/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,18 +156,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584898396564">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584899942474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584898396564" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584890060892">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584899942474" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584899839134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584877615592" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584890060892" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584890351177">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584899839134" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584901222935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584890351177" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584901222935" />
   </component>
 </project>
