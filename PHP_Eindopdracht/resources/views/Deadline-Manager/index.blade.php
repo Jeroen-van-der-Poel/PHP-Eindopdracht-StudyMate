@@ -16,7 +16,7 @@
                             <th>Opdracht</th>
                             <th>Vak</th>
                             <th>Docent</th>
-                            <th>Datum</th>
+                            <th>Tentamne/Inlever Datum</th>
                             <th>Categorie</th>
                             <th>Afgerond op</th>
                             <th>Operaties</th>
@@ -30,8 +30,16 @@
                             <tr>
 
                                 <td>{{ $deadline->title }}</td>
-                                <td>{{ $courses->name->where('id', '==', $deadline->courseid) }}</td>
-                                <td>{{ $teachers->name->where('id', '==', $deadline->teacherid) }}</td>
+                                @foreach($courses as $key => $course)
+                                    @if($course->id === $deadline->courseid)
+                                        <td>{{ $course->name }}</td>
+                                    @endif
+                                @endforeach
+                                @foreach($teachers as $key => $teacher)
+                                    @if($teacher->id === $deadline->teacherid)
+                                        <td>{{ $teacher->name }}</td>
+                                    @endif
+                                @endforeach
                                 <td>{{ $deadline->duedate }}</td>
                                 <td>{{ $deadline->categorie }}</td>
                                 <td>{{ $deadline->finished }}</td>

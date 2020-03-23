@@ -26,9 +26,11 @@
 
                     <div class="form-group row">
                         <label for="teacherid" class="col-md-4 col-form-label pl-0">Docent</label>
-
-                        <input id="teacherid" type="text" class="form-control @error('teacherid') is-invalid @enderror" name="teacherid" value="{{ old('teacherid') }}" required autocomplete="teacherid" autofocus>
-
+                        <select name="teacherid" class="form-control">
+                            @foreach($teachers as $teacher)
+                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                            @endforeach
+                        </select>
                         @error('teacherid')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -37,10 +39,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="courseid" class="col-md-4 col-form-label pl-0">Vak</label>
-
-                        <input id="courseid" type="" class="form-control @error('courseid') is-invalid @enderror" name="courseid" value="{{ old('courseid') }}" required autocomplete="courseid" autofocus>
-
+                        <label for="courseid" class="col-md-4 col-form-label pl-0">Vak/Course</label>
+                        <select name="courseid" class="form-control">
+                            @foreach($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
                         @error('courseid')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -62,9 +66,10 @@
 
                     <div class="form-group row">
                         <label for="categorie" class="col-md-4 col-form-label pl-0">Categorie</label>
-
-                        <input id="categorie" type="text" class="form-control @error('categorie') is-invalid @enderror" name="categorie" value="{{ old('categorie') }}" required autocomplete="categorie" autofocus>
-
+                        <select name="categorie" class="form-control">
+                            <option value="Assessment">Assessment</option>
+                            <option value="Tentamen">Tentamen</option>
+                        </select>
                         @error('categorie')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>

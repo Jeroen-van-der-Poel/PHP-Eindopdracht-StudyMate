@@ -23,5 +23,20 @@ class DeadlineController extends Controller
         $courses = Course::orderBy('id', 'desc')->get();
         return view('Deadline-Manager/create', compact('teachers', 'courses'));
     }
+
+    public function store(){
+
+        $data = request()->validate([
+            'title' => 'required',
+            'teacherid' => 'required',
+            'courseid' => 'required',
+            'duedate' => 'required',
+            'categorie' => 'required',
+        ]);
+
+        \App\Deadline::create($data);
+
+        return redirect('/deadline');
+    }
 }
 
