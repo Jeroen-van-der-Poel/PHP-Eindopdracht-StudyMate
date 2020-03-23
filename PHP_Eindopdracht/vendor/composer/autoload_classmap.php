@@ -4168,5 +4168,6 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+    'tagsSeeder' => $baseDir . '/database/seeds/tagsSeeder.php',
     'voku\\helper\\ASCII' => $vendorDir . '/voku/portable-ascii/src/voku/helper/ASCII.php',
 );
