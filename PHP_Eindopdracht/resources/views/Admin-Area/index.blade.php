@@ -72,18 +72,21 @@
                             <th>Naam</th>
                             <th>Periode</th>
                             <th>Coördinator</th>
-                            <th>Rol</th>
+                            <th>Soort examen</th>
+                            <th>Studiepunten</th>
                             <th>Operaties</th>
                         </tr>
                         </thead>
 
                         <tbody>
                         @foreach ($courses as $course)
+
                             <tr>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->period }}</td>
+                                <td>{{ \App\Teacher::where('id', $course->coordinator)->firstOrFail()->name }}</td>
                                 <td>{{ $course->test_method}}</td>
-                                <td>Nog niks</td>
+                                <td>{{ $course->study_points}}</td>
                                 <td>
                                     <form action="/editCourse/{{$course->id}}" method="GET">
                                         <div class="form-group">
@@ -96,7 +99,9 @@
                                         {{ method_field('DELETE') }}
 
                                         <div class="form-group d-flex">
-                                            <input type="submit" class="btn btn-danger delete-course" value="verwijderen">
+                                            <input type="submit" class="btn btn-danger delete-course" value="Verwijderen">
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

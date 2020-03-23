@@ -39,9 +39,11 @@
 
                     <div class="form-group row">
                         <label for="coordinator" class="col-md-4 col-form-label pl-0">Coördinator</label>
-
-                        <input id="coordinator" type="text" class="form-control @error('coordinator') is-invalid @enderror" name="coordinator" value="{{ old('coordinator') }}" required autocomplete="coordinator" autofocus>
-
+                            <select name="coordinator" class="form-control">
+                                @foreach($teachers as $teacher)
+                                    <option value="{{$teacher->name}}">{{$teacher->name}}</option>
+                                @endforeach
+                            </select>
                         @error('coordinator')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -51,10 +53,25 @@
 
                     <div class="form-group row">
                         <label for="test_method" class="col-md-4 col-form-label pl-0">Soort Examen</label>
-
-                        <input id="test_method" type="text" class="form-control @error('test_method') is-invalid @enderror" name="test_method" value="{{ old('test_method') }}" required autocomplete="test_method" autofocus>
-
+                        <select name="test_method" class="form-control">
+                            <option value="Tentamen">Tentamen</option>
+                            <option value="GroepsAssessment">Groep Assessment</option>
+                            <option value="Individueel Assessment">Individueel Assessment</option>
+                            <option value="Opdrachten">Opdrachten</option>
+                        </select>
                         @error('test_method')
+                        <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="study_points" class="col-md-4 col-form-label pl-0">Studiepunten</label>
+
+                        <input id="study_points" type="number" class="form-control @error('study_points') is-invalid @enderror" name="study_points" value="{{ old('study_points') }}" required autocomplete="study_points" autofocus>
+
+                        @error('study_points')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>
