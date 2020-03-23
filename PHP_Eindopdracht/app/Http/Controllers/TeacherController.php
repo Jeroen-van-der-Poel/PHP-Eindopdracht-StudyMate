@@ -36,6 +36,11 @@ class TeacherController extends Controller
 
     public function update($id){
 
+        $teacher = Teacher::where('id', $id)->firstOrFail();
+
+        $teacher->has_taught = 0;
+        $teacher->save();
+
         $data = request()->validate([
             'name' => 'required',
             'email' => 'email:rfc,dns',
@@ -43,7 +48,6 @@ class TeacherController extends Controller
             'has_taught' => ''
         ]);
 
-        $teacher = Teacher::where('id', $id)->firstOrFail();
         $teacher->fill($data)->save();
 
         return redirect('/admin');
