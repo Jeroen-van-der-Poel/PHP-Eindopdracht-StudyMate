@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="form-group row pt-3">
-                        <input id="has_taught" type="checkbox" class="form-control" name="has_taught" value="1" style="height: 20px; width: 18px; ">
+                        <input id="has_taught" type="checkbox" class="form-control" name="has_taught" value="1" {{  ($teacher->has_taught == 1 ? ' checked' : '') }} style="height: 20px; width: 18px; ">
                         <label for="has_taught" class="pl-0">Heeft jouw les gegeven </label>
                     </div>
 
