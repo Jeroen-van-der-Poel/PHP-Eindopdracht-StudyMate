@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->integer('period');
             $table->unsignedBigInteger('coordinator');
             $table->string('test_method');
+            $table->integer('study_points');
             $table->timestamps();
         });
     }
