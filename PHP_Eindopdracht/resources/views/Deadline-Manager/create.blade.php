@@ -31,6 +31,7 @@
                                 <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                             @endforeach
                         </select>
+
                         @error('teacherid')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -45,6 +46,7 @@
                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
                             @endforeach
                         </select>
+
                         @error('courseid')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
@@ -70,7 +72,23 @@
                             <option value="Assessment">Assessment</option>
                             <option value="Tentamen">Tentamen</option>
                         </select>
+
                         @error('categorie')
+                        <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="tags" class="col-md-4 col-form-label pl-0">Tags</label>
+                        <select name="tags[]" class="form-control" multiple>
+                            @foreach($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('tags')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>

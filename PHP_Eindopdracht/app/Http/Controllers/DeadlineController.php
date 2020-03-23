@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Deadline;
+use App\Tag;
 use App\Teacher;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -22,9 +23,10 @@ class DeadlineController extends Controller
 
     public function create()
     {
-        $teachers = Teacher::orderBy('id', 'desc')->get();
-        $courses = Course::orderBy('id', 'desc')->get();
-        return view('Deadline-Manager/create', compact('teachers', 'courses'));
+        $teachers = Teacher::orderBy('id', 'asc')->get();
+        $courses = Course::orderBy('id', 'asc')->get();
+        $tags = Tag::orderBy('id', 'asc')->get();
+        return view('Deadline-Manager/create', compact('teachers', 'courses', 'tags'));
     }
 
     public function store(){
@@ -37,7 +39,10 @@ class DeadlineController extends Controller
             'categorie' => 'required',
         ]);
 
-        \App\Deadline::create($data);
+        $deadline = new Deadline($data);
+        $deadline->save();
+
+        $deadline->tags()->attach(request('tags')); 
 
         return redirect('/deadline');
     }
