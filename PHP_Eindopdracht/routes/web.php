@@ -35,3 +35,4 @@ Route::patch('/editCourse/{id}', 'CourseController@update');
 Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');
 
 Route::get('/deadline', 'DeadlineController@index');
+Route::get('/addDeadline', 'DeadlineController@create');

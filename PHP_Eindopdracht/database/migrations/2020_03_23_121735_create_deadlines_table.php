@@ -15,11 +15,12 @@ class CreateDeadlinesTable extends Migration
     {
         Schema::create('deadlines', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->unsignedBigInteger('teacherid');
             $table->unsignedBigInteger('courseid');
             $table->dateTime('duedate');
-            $table->string('categorie');
-            $table->dateTime('finished');
+            $table->string('categorie')->nullable();
+            $table->dateTime('finished')->nullable();
             $table->timestamps();
         });
     }

@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Deadline;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class DeadlineController extends Controller
 {
     public function index()
     {
-        return View('Deadline-Manager/index');
+        $deadlines = Deadline::orderBy('duedate', 'desc')->get();
+        $teachers = Teacher::orderBy('id', 'desc')->get();
+        $courses = Course::orderBy('id', 'desc')->get();
+        return View('Deadline-Manager/index', compact('deadlines', 'teachers', 'courses'));
+    }
+
+    public function create()
+    {
+        $teachers = Teacher::orderBy('id', 'desc')->get();
+        $courses = Course::orderBy('id', 'desc')->get();
+        return view('Deadline-Manager/create', compact('teachers', 'courses'));
     }
 }
+
