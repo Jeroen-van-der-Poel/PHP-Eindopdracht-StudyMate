@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="654a567f-eab6-415b-99cf-1004c5007709" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Admin-Area/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChallengerProgram" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -146,6 +144,7 @@
       <workItem from="1584822162872" duration="1251000" />
       <workItem from="1584877605415" duration="12000" />
       <workItem from="1584882815924" duration="2108000" />
+      <workItem from="1584956284225" duration="391000" />
     </task>
     <servers />
   </component>

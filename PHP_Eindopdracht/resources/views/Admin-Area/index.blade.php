@@ -16,7 +16,7 @@
                             <th>Naam</th>
                             <th>Email</th>
                             <th>Telefoonnummer</th>
-                            <th>Heeft les gegeven</th>
+                            <th>Heeft jouw les gegeven</th>
                             <th>Operaties</th>
 
                         </tr>
