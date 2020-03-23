@@ -18,7 +18,7 @@
                             <th>Docent</th>
                             <th>Tentamen/Inlever Datum</th>
                             <th>Categorie</th>
-                            <th>Afgerond op</th>
+                            <th>Tags</th>
                             <th>Operaties</th>
 
                         </tr>
@@ -42,7 +42,13 @@
                                 @endforeach
                                 <td>{{ $deadline->duedate }}</td>
                                 <td>{{ $deadline->categorie }}</td>
-                                <td>{{ $deadline->finished }}</td>
+                                <td>
+                                    <ul>
+                                    @foreach($deadline->tags as $tag)
+                                        <li>{{ $tag->title }}</li>
+                                    @endforeach
+                                    </ul>
+                                </td>
 
                                 <td>
                                     <form action="" method="GET">
