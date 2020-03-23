@@ -11,7 +11,7 @@ class DeadlineController extends Controller
 {
     public function index()
     {
-        $deadlines = Deadline::orderBy('duedate', 'desc')->get();
+        $deadlines = Deadline::orderBy('duedate', 'asc')->get();
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $courses = Course::orderBy('id', 'desc')->get();
         return View('Deadline-Manager/index', compact('deadlines', 'teachers', 'courses'));
