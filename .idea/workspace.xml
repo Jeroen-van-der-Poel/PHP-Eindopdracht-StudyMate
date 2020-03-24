@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654a567f-eab6-415b-99cf-1004c5007709" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/app/Http/Controllers/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP_Eindopdracht/tests/Browser/DeadlineTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP_Eindopdracht/tests/Browser/DeadlineTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +117,8 @@
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/psr/log" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/laravel/dusk" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/php-webdriver/webdriver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZRoxWeBroNA2Zib0JW1ywbQavR" />
@@ -128,6 +131,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DeadlineTests.test_Can_Click_Add_Deadline" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Browser\DeadlineTests" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Browser/DeadlineTest.php" method="test_Can_Click_Add_Deadline" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.DeadlineTests.test_Can_Click_Add_Deadline" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -151,6 +165,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="644" y="124" width="645" height="791" key="#DeadlineTests.test_Can_Click_Add_Deadline" timestamp="1585063516992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="644" y="124" width="645" height="791" key="#DeadlineTests.test_Can_Click_Add_Deadline/0.0.1920.1040@0.0.1920.1040" timestamp="1585063516992" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585063808638">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585063808638" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584906980191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
