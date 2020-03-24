@@ -29,10 +29,10 @@ class Course extends Model
     public function HasUploadedFile($id)
     {
         if($id != ""){
-            if(Upload::where('course_id', $id)->firstOrFail()){
+            if(Upload::where('course_id', $id)->exists()){
                 return true;
             }
-            return false;
+                return false;
         }
         else {
             return false;
