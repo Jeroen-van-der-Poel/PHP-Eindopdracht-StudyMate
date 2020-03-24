@@ -85,7 +85,9 @@
                             <tr>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->period }}</td>
-                                <td>{{ \App\Teacher::where('id', $course->coordinator)->firstOrFail()->name }}</td>
+                                {{--<td>{{ \App\Teacher::where('id', $course->coordinator)->firstOrFail()->name }}</td>--}}
+                                {{--<td>{{$course->coordinator->name}}</td>--}}
+                                <td>{{ $course->IsCoordinator($course->coordinator) }}</td>
                                 <td>{{ $course->test_method}}</td>
                                 <td>{{ $course->study_points}}</td>
                                 <td>{{ $course->teachers()->pluck('name')->implode(' ') }}</td>

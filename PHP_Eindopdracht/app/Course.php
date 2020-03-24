@@ -8,11 +8,19 @@ class Course extends Model
 {
     protected $guarded = [];
 
+    public function IsCoordinator($id){
+        if($id != ""){
+            return Teacher::where('id', $id)->firstOrFail()->name;
+        }
+        else {
+            return "";
+        }
+    }
+
     public function teachers()
     {
         return $this->BelongsToMany(Teacher::class);
     }
-
 
     public function course()
     {
