@@ -54,10 +54,9 @@
                     <div class="form-group row">
                         <label for="test_method" class="col-md-4 col-form-label pl-0">Soort Examen</label>
                         <select name="test_method" class="form-control">
-                            <option value="Tentamen">Tentamen</option>
-                            <option value="GroepsAssessment">Groep Assessment</option>
-                            <option value="Individueel Assessment">Individueel Assessment</option>
-                            <option value="Opdrachten">Opdrachten</option>
+                            @foreach($exam_methods as $exam_method)
+                                <option value="{{ $exam_method->id }}">{{ $exam_method->title }}</option>
+                            @endforeach
                         </select>
                         @error('test_method')
                         <span class="invalid-feedback" role="alert">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\ExamMethod;
 use App\Http\Controllers\Controller;
 use App\Teacher;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class CourseController extends Controller
 {
     public function create(){
         $teachers = Teacher::orderBy('id', 'desc')->get();
-        return view('Course/create', compact('teachers'));
+        $exam_methods = ExamMethod::all();
+        return view('Course/create', compact('teachers', 'exam_methods'));
     }
 
     public function store(Request $request){
@@ -20,7 +22,7 @@ class CourseController extends Controller
             'name' => $request->name,
             'period' => $request->period,
             'coordinator' => $request->input('coordinator'),
-            'test_method' => $request->input('test_method'),
+            'exam_method_id' => $request->input('test_method'),
             'study_points' => $request->study_points,
         ]);
         $course = Course::orderBy('id', 'desc')->firstOrFail();
@@ -31,7 +33,8 @@ class CourseController extends Controller
     public function edit($id){
         $course = Course::findOrFail($id);
         $teachers = Teacher::orderBy('id', 'desc')->get();
-        return view('Course/edit', compact('course', 'teachers'));
+        $exam_methods = ExamMethod::all();
+        return view('Course/edit', compact('course', 'teachers', 'exam_methods'));
     }
 
     public function update(Request $request, $id){
