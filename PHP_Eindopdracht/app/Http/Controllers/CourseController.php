@@ -11,7 +11,6 @@ class CourseController extends Controller
 {
     public function create(){
         $teachers = Teacher::orderBy('id', 'desc')->get();
-
         return view('Course/create', compact('teachers'));
     }
 

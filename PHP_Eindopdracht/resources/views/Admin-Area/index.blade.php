@@ -102,6 +102,72 @@
                                             <input type="submit" class="btn btn-danger delete-course" value="Verwijderen">
                                         </div>
                                     </form>
+                                    @if($course->test_method == "Individueel Assessment")
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit">
+                                            Upload
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="myModalLabel">File uploaden</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form action="/upload/{{$course->id}}" method="post" enctype="multipart/form-data">
+                                                        {{@csrf_field()}}
+                                                        <div class="modal-body">
+                                                            <label for="file">File</label>
+                                                            <input type="file" accept="zip/*" name="file" required>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                                                            <div class="form-group">
+                                                                <input type="submit" class="btn btn-success" value="Opslaan">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-secondary d-flex float-right" data-toggle="modal" data-target="#teachers_course">
+                                        Docenten
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="teachers_course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="myModalLabel">Docenten koppelen</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="/assign_teachers_course/{{$course->id}}" method="post" enctype="multipart/form-data">
+                                                    {{@csrf_field()}}
+                                                    @foreach($teachers as $teacher)
+                                                        <div class="form-group row pt-3">
+                                                            <input id="teacher_gives_course" type="checkbox" class="form-control" name="teacher_gives_course" value="1" style="height: 20px; width: 18px;">
+                                                            <label for="teacher_gives_course" class="pl-0">{{$teacher->name}}</label>
+                                                        </div>
+                                                    @endforeach
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                                                        <div class="form-group">
+                                                            <input type="submit" class="btn btn-success" value="Opslaan">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
