@@ -38,13 +38,12 @@ class CourseController extends Controller
     }
 
     public function update(Request $request, $id){
-        $selectedTeacher = $request->input('coordinator');
 
         Course::where('id', $id)->firstOrFail()->update([
             'name' => $request->name,
             'period' => $request->period,
-            'coordinator' => Teacher::where('name', $selectedTeacher)->firstOrFail()->id,
-            'test_method' => $request->input('test_method'),
+            'coordinator' => $request->input('coordinator'),
+            'exam_method_id' => $request->input('test_method'),
             'study_points' => $request->study_points,
         ]);
         return redirect('/admin');
@@ -57,22 +56,4 @@ class CourseController extends Controller
         return redirect("/admin");
     }
 
-/*    public function assignTeachersToCourse($id){
-
-        $course = Course::find($id);
-        $selectedteachers = request('teachers_course');
-        foreach ($selectedteachers as $selectedteacher)
-        {
-            if(!DB::table('course_teacher')
-                ->where('course_id', '=', $course)
-                ->where('teacher_id', '=', $selectedteacher)
-                ->exists()){
-                $course->teachers()->attach(request($selectedteacher));
-            }
-            return redirect('/admin');
-        }
-        $course->teachers()->attach(request('teachers_course'));
-
-        return redirect('/admin');
-    }*/
 }

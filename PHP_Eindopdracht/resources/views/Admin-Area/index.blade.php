@@ -104,38 +104,44 @@
                                             <input type="submit" class="btn btn-danger delete-course" value="Verwijderen">
                                         </div>
                                     </form>
-                                    @if($course->test_method == "Individueel Assessment")
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit">
-                                            Upload
-                                        </button>
+                                    @if($course->Exam($course->exam_method_id) == "Individueel Assessment")
+                                        @if(!$course->HasUploadedFile($course->id))
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit">
+                                                Upload
+                                            </button>
 
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="myModalLabel">File uploaden</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <form action="/upload/{{$course->id}}" method="post" enctype="multipart/form-data">
-                                                        {{@csrf_field()}}
-                                                        <div class="modal-body">
-                                                            <label for="file">File</label>
-                                                            <input type="file" accept="zip/*" name="file" required>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">File uploaden</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                                                            <div class="form-group">
-                                                                <input type="submit" class="btn btn-success" value="Opslaan">
+                                                        <form action="/upload/{{$course->id}}" method="post" enctype="multipart/form-data">
+                                                            {{@csrf_field()}}
+                                                            <div class="modal-body">
+                                                                <label for="file">File</label>
+                                                                <input type="file" accept="zip/*" name="file" required>
                                                             </div>
-                                                        </div>
-                                                    </form>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                                                                <div class="form-group">
+                                                                    <input type="submit" class="btn btn-success" value="Opslaan">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            @else
+                                                <div class="form-group">
+                                                    <input type="submit" class="btn btn-primary d-flex float-right" value="Download">
+                                                </div>
+                                            @endif
                                     @endif
                                 </td>
                             </tr>

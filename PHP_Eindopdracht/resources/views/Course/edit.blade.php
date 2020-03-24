@@ -41,7 +41,7 @@
                         <label for="coordinator" class="col-md-4 col-form-label pl-0">Coördinator</label>
                         <select name="coordinator" class="form-control">
                             @foreach($teachers as $teacher)
-                                <option value="{{$teacher->name}}">{{$teacher->name}}</option>
+                                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                             @endforeach
                         </select>
                         @error('coordinator')
