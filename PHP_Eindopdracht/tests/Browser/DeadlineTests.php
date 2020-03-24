@@ -8,6 +8,7 @@ use Tests\DuskTestCase;
 
 class DeadlineTests extends DuskTestCase
 {
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      * @test
