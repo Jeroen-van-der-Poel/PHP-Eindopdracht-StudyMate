@@ -22,7 +22,7 @@ class DeadlineTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/addDeadline')
                 ->assertSee('Deadline aanmaken')
-                ->type('title', 'JavaToets')
+                ->type('title', 'TestDeadline')
                 ->select('teacherid')
                 ->select('courseid')
                 ->type('duedate', '5')
