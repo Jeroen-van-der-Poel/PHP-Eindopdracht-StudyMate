@@ -38,3 +38,5 @@ Route::get('/deadline', 'DeadlineController@index');
 Route::get('/addDeadline', 'DeadlineController@create');
 Route::post('/deadline', 'DeadlineController@store');
 Route::patch('/deadline/edit', 'DeadlineController@update');
+
+Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');;
