@@ -17,10 +17,12 @@ class Course extends Model
     public function course()
     {
         return $this->hasOne('App\Upload');
+    }
 
     public function deadlines()
     {
         return $this->hasMany(Deadline::class);
 
     }
+
 }

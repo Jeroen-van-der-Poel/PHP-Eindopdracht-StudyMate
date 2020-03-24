@@ -63,7 +63,7 @@
                 <div class="table-responsive">
                         <div class="card-header d-flex justify-content-between">
                             <span><i class="fas fa-users"></i>Vakken overzicht</span>
-                            <span><a href="/addCourse">Vakken Toevoegen</a></span>
+                            <span><a href="/addCourse">Vak Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
 
@@ -74,6 +74,7 @@
                             <th>Coördinator</th>
                             <th>Soort examen</th>
                             <th>Studiepunten</th>
+                            <th>Docenten</th>
                             <th>Operaties</th>
                         </tr>
                         </thead>
@@ -87,6 +88,7 @@
                                 <td>{{ \App\Teacher::where('id', $course->coordinator)->firstOrFail()->name }}</td>
                                 <td>{{ $course->test_method}}</td>
                                 <td>{{ $course->study_points}}</td>
+                                <td>{{ $course->teachers()->pluck('name')->implode(' ') }}</td>
                                 <td>
                                     <form action="/editCourse/{{$course->id}}" method="GET">
                                         <div class="form-group">
@@ -135,40 +137,6 @@
                                             </div>
                                         </div>
                                     @endif
-                                <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-secondary d-flex float-right" data-toggle="modal" data-target="#teachers_course">
-                                        Docenten
-                                    </button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="teachers_course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="myModalLabel">Docenten koppelen</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form action="/assign_teachers_course/{{$course->id}}" method="post" enctype="multipart/form-data">
-                                                    {{@csrf_field()}}
-                                                    @method('PATCH')
-                                                    @foreach($teachers as $teacher)
-                                                        <div class="form-group row pt-3">
-                                                            <input id="teacher_gives_course" type="checkbox" class="form-control" name="teacher_gives_course" value="{{$teacher->id}}" style="height: 20px; width: 18px;">
-                                                            <label for="teacher_gives_course" class="pl-0">{{$teacher->name}}</label>
-                                                        </div>
-                                                    @endforeach
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                                                        <div class="form-group">
-                                                            <input type="submit" class="btn btn-success" value="Opslaan">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                         @endforeach

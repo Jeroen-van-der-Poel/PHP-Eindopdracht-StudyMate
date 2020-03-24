@@ -6,6 +6,7 @@ use App\Course;
 use App\Http\Controllers\Controller;
 use App\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -15,15 +16,15 @@ class CourseController extends Controller
     }
 
     public function store(Request $request){
-        $selectedTeacher = $request->input('coordinator');
         Course::create([
             'name' => $request->name,
             'period' => $request->period,
-            'coordinator' => Teacher::where('name', $selectedTeacher)->firstOrFail()->id,
+            'coordinator' => $request->input('coordinator'),
             'test_method' => $request->input('test_method'),
             'study_points' => $request->study_points,
         ]);
-
+        $course = Course::orderBy('id', 'desc')->firstOrFail();
+        $course->teachers()->attach(request('teachers_course'));
         return redirect('/admin');
     }
 
@@ -53,15 +54,22 @@ class CourseController extends Controller
         return redirect("/admin");
     }
 
-    public function assignTeachersToCourse(Request $request, $id){
+/*    public function assignTeachersToCourse($id){
+
         $course = Course::find($id);
-/*        $teachers = $request->teacher_gives_course;*/
-        $request->merge([
-            'teacher_gives_course' => implode(',', (array) $request->get('teacher_gives_course'))
-        ]);
-        foreach ($teachers as $teacher){
-            $selectedteacher = Teacher::where('name', $teacher)->firstOrFail()->id;
-            $course->roles()->attach($selectedteacher);
+        $selectedteachers = request('teachers_course');
+        foreach ($selectedteachers as $selectedteacher)
+        {
+            if(!DB::table('course_teacher')
+                ->where('course_id', '=', $course)
+                ->where('teacher_id', '=', $selectedteacher)
+                ->exists()){
+                $course->teachers()->attach(request($selectedteacher));
+            }
+            return redirect('/admin');
         }
-    }
+        $course->teachers()->attach(request('teachers_course'));
+
+        return redirect('/admin');
+    }*/
 }
