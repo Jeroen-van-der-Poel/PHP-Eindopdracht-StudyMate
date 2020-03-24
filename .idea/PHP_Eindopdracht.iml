@@ -27,6 +27,7 @@
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/jakub-onderka/php-console-highlighter" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/laravel/dusk" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/laravel/ui" />
@@ -42,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/php-webdriver/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/PHP_Eindopdracht/vendor/phpdocumentor/type-resolver" />

@@ -98,6 +98,8 @@
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/psr/log" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/laravel/dusk" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/php-webdriver/webdriver" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
