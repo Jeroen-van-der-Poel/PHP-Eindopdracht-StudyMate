@@ -17,10 +17,10 @@ class DeadlineController extends Controller
 
         if(request('sort')){
             $deadlines = Deadline::orderBy(request('sort'), 'asc')->wherenull('finished')->get();
-            $finisheddeadlines = Deadline::orderBy(request('sort'), 'asc')->where('finished', '!=', 'null')->get();
+            $finisheddeadlines = Deadline::orderBy(request('sort'), 'asc')->whereNotNull('finished')->get();
         }else{
             $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->get();
-            $finisheddeadlines = Deadline::orderBy('finished', 'asc')->where('finished', '!=', 'null')->get();
+            $finisheddeadlines = Deadline::orderBy('finished', 'asc')->whereNotNull('finished')->get();
         }
 
         $teachers = Teacher::orderBy('id', 'desc')->get();
