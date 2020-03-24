@@ -22,6 +22,10 @@ class CreateDeadlinesTable extends Migration
             $table->string('categorie')->nullable();
             $table->dateTime('finished')->nullable();
             $table->timestamps();
+
+            $table->foreign('teacherid')->references('id')->on('teachers')->onDelete('cascade');
+            $table->foreign('courseid')->references('id')->on('courses')->onDelete('cascade');
+
         });
     }
 

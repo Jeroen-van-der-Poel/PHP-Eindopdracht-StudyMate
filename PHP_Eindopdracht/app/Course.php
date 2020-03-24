@@ -12,4 +12,9 @@ class Course extends Model
     {
         return $this->BelongsToMany(Teacher::class);
     }
+
+    public function deadlines()
+    {
+        return $this->hasMany(Deadline::class);
+    }
 }
