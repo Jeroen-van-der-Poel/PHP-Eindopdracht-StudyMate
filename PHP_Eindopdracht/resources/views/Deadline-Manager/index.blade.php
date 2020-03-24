@@ -35,7 +35,7 @@
                             <th>Tentamen/Inlever Datum</th>
                             <th>Categorie</th>
                             <th>Tags</th>
-                            <th>Operaties</th>
+                            <th>Afronden</th>
                         </tr>
                         </thead>
 
