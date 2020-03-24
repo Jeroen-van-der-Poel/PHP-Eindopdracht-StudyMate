@@ -14,10 +14,18 @@ class DeadlineController extends Controller
     public function index()
     {
         $datetime = Carbon::now();
-        $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->get();
-        $finisheddeadlines = Deadline::orderBy('duedate', 'asc')->where('finished', '!=', 'null')->get();
+
+        if(request('sort')){
+            $deadlines = Deadline::orderBy(request('sort'), 'asc')->wherenull('finished')->get();
+            $finisheddeadlines = Deadline::orderBy(request('sort'), 'asc')->where('finished', '!=', 'null')->get();
+        }else{
+            $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->get();
+            $finisheddeadlines = Deadline::orderBy('finished', 'asc')->where('finished', '!=', 'null')->get();
+        }
+
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $courses = Course::orderBy('id', 'desc')->get();
+
         return View('Deadline-Manager/index', compact('deadlines', 'teachers', 'courses', 'finisheddeadlines'));
     }
 

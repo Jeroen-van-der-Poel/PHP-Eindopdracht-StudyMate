@@ -2,6 +2,19 @@
 
 @section('content')
     <div class="container">
+        <div class="row pb-4  pt-4">
+            <div class="col-lg-12 col-lg-offset-1">
+                 <h2>Sorteren</h2>
+                <span>
+                    <a href="/deadline">Default</a> |
+                    <a href="/deadline?sort=teacherid">Docent</a> |
+                    <a href="/deadline?sort=courseid">Module</a> |
+                    <a href="/deadline?sort=duedate">Tijdstip</a> |
+                    <a href="/deadline?sort=categorie">Categorie</a>
+                </span>
+            </div>
+        </div>
+
         <form action="/deadline/edit" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
@@ -9,7 +22,7 @@
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
                     <div class="card-header d-flex justify-content-between">
-                        <span><i class="fas fa-clock"></i>Aankomende deadlines</span>
+                        <span><i class="fas fa-clock"></i>Openstaande deadlines</span>
                         <span><a href="/addDeadline">Deadline Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
@@ -17,13 +30,12 @@
                         <thead>
                         <tr>
                             <th>Opdracht</th>
-                            <th>Vak</th>
+                            <th>Vak/Module</th>
                             <th>Docent</th>
                             <th>Tentamen/Inlever Datum</th>
                             <th>Categorie</th>
                             <th>Tags</th>
                             <th>Operaties</th>
-
                         </tr>
                         </thead>
 
@@ -80,13 +92,12 @@
                             <thead>
                             <tr>
                                 <th>Opdracht</th>
-                                <th>Vak</th>
+                                <th>Vak/Module</th>
                                 <th>Docent</th>
                                 <th>Tentamen/Inlever Datum</th>
                                 <th>Categorie</th>
+                                <th>Tags</th>
                                 <th>Afgerond op</th>
-                                <th>Operaties</th>
-
                             </tr>
                             </thead>
 
@@ -108,10 +119,14 @@
                                     @endforeach
                                     <td>{{ $deadline->duedate }}</td>
                                     <td>{{ $deadline->categorie }}</td>
-                                    <td>{{ $deadline->finished }}</td>
-
                                     <td>
+                                        <ul>
+                                            @foreach($deadline->tags as $tag)
+                                                <li>{{ $tag->title }}</li>
+                                            @endforeach
+                                        </ul>
                                     </td>
+                                    <td>{{ $deadline->finished }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

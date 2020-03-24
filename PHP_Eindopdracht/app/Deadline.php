@@ -8,6 +8,10 @@ class Deadline extends Model
 {
     protected $guarded = [];
 
+    public function sortCategeorie(){
+
+    }
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
