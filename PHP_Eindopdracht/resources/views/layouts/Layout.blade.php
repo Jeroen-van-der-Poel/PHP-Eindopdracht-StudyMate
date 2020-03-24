@@ -60,7 +60,7 @@
             </li>
 
             <li class="nav-itemx">
-                <a href="/#" class="nav-linkx">
+                <a href="/deadline" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-tasks"></span></i>
                     <span class="link-text">Deadline Manager</span>
                 </a>

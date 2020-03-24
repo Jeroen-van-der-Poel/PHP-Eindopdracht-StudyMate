@@ -20,4 +20,9 @@ class Teacher extends Model
     {
         return $this->BelongsToMany(Course::class);
     }
+
+    public function deadlines()
+    {
+        return $this->hasMany(Deadline::class);
+    }
 }
