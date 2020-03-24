@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <form action="/deadline" enctype="multipart/form-data" method="post">
+        <form action="/deadline/edit" enctype="multipart/form-data" method="post">
             @csrf
+            @method('PATCH')
         <div class="row pb-4  pt-4">
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
