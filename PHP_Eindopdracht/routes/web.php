@@ -37,3 +37,4 @@ Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyC
 Route::get('/deadline', 'DeadlineController@index');
 Route::get('/addDeadline', 'DeadlineController@create');
 Route::post('/deadline', 'DeadlineController@store');
+Route::post('/deadline', 'DeadlineController@update');

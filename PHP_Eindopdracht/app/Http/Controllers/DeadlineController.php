@@ -14,7 +14,7 @@ class DeadlineController extends Controller
     public function index()
     {
         $datetime = Carbon::now();
-        $deadlines = Deadline::orderBy('duedate', 'asc')->get();
+        $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->get();
         $finisheddeadlines = Deadline::orderBy('duedate', 'asc')->where('finished', '!=', 'null')->get();
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $courses = Course::orderBy('id', 'desc')->get();
@@ -29,8 +29,8 @@ class DeadlineController extends Controller
         return view('Deadline-Manager/create', compact('teachers', 'courses', 'tags'));
     }
 
-    public function store(){
-
+    public function store()
+    {
         $this->validateDeadline();
 
         $deadline = new Deadline(request(['title', 'teacherid', 'courseid', 'duedate', 'categorie']));
@@ -41,7 +41,8 @@ class DeadlineController extends Controller
         return redirect('/deadline');
     }
 
-    protected function validateDeadline(){
+    protected function validateDeadline()
+    {
         return request()->validate([
             'title' => 'required',
             'teacherid' => 'required',
@@ -50,6 +51,23 @@ class DeadlineController extends Controller
             'categorie' => 'required',
             'tags' => 'exists:tags,id',
         ]);
+    }
+
+    public function update()
+    {
+        $deadlines = Deadline::orderBy('id', 'asc')->get();
+        $datetime = Carbon::now();
+
+        foreach (request('finished') as $fin){
+            foreach ($deadlines as $deadline){
+                if($fin == $deadline->id){
+                    $deadline->finished = $datetime;
+                    $deadline->save();
+                }
+            }
+        }
+
+        return redirect('/deadline');
     }
 }
 

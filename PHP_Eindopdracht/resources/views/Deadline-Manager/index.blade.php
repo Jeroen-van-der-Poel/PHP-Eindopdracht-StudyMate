@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container">
+        <form action="/deadline" enctype="multipart/form-data" method="post">
+            @csrf
         <div class="row pb-4  pt-4">
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
@@ -51,22 +53,22 @@
                                 </td>
 
                                 <td>
-                                    <form action="" method="GET">
                                         <div class="form-group">
-                                            <input id="finished" type="checkbox" class="form-control" name="finished" value="1" style="height: 25px;">
+                                            <input id="finished" type="checkbox" class="form-control" name="finished[]" value="{{ $deadline->id}} " style="height: 25px;">
                                         </div>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
-
                     </table>
+                </div>
+                <div class="form-group mr-1 row d-flex justify-content-end">
+                    <button class="btn btn-primary" style="width: 100px">Opslaan</button>
                 </div>
             </div>
         </div>
 
-            <div class="row pb-4  pt-4">
+            <div class="row pb-4">
                 <div class="col-lg-12 col-lg-offset-1">
                     <div class="table-responsive">
                         <div class="card-header d-flex justify-content-between">
@@ -116,5 +118,7 @@
                         </table>
                     </div>
                 </div>
+            </div>
+        </form>
     </div>
 @endsection
