@@ -152,9 +152,10 @@
                                                 </div>
                                                 <form action="/assign_teachers_course/{{$course->id}}" method="post" enctype="multipart/form-data">
                                                     {{@csrf_field()}}
+                                                    @method('PATCH')
                                                     @foreach($teachers as $teacher)
                                                         <div class="form-group row pt-3">
-                                                            <input id="teacher_gives_course" type="checkbox" class="form-control" name="teacher_gives_course" value="1" style="height: 20px; width: 18px;">
+                                                            <input id="teacher_gives_course" type="checkbox" class="form-control" name="teacher_gives_course" value="{{$teacher->id}}" style="height: 20px; width: 18px;">
                                                             <label for="teacher_gives_course" class="pl-0">{{$teacher->name}}</label>
                                                         </div>
                                                     @endforeach
