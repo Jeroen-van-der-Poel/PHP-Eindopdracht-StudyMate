@@ -43,12 +43,6 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        'dusk_testing' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('dusk_test.sqlite')),
-            'prefix' => '',
-        ],
-
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),

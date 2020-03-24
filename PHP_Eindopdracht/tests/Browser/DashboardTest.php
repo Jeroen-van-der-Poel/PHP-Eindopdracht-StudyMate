@@ -13,11 +13,11 @@ class DashboardTest extends DuskTestCase
      *
      * @return void
      */
-    public function testExample()
+/*    public function testExample()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                     ->assertSee('Laravel');
         });
-    }
+    }*/
 }
