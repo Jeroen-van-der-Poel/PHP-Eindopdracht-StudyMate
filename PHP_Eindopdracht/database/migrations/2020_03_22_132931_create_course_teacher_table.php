@@ -18,6 +18,9 @@ class CreateCourseTeacherTable extends Migration
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('teacher_id');
             $table->timestamps();
+
+            $table->foreign('course_id')->references('id')->on('course')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('teacher')->onDelete('cascade');
         });
     }
 
