@@ -8,7 +8,7 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?data=%7B%7B url('http://127.0.0.1:8000/dashboard') }}&size=220x220&margin=0" alt="qrcode">
             </div>
             <div class="col-lg-8 col-lg-offset-1 d-flex justify-content-center">
-                <progress class="pt-4" value="{{ $totalstudypoints }}" max="180" style="width: 100%;"></progress>
+                <progress class="pt-4" value="{{ $totalstudypoints ?? "0" }}" max="180" style="width: 100%;"></progress>
             </div>
         </div>
         <hr>
