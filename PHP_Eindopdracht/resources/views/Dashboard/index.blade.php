@@ -20,28 +20,34 @@
                 <div class="col-lg-3" style="border: 1px solid black">
                     <div class="d-flex justify-content-between">
                         <p>Blok {{ $count += 1 }}</p>
-                        <progress class="mt-1" value="{{ $totalstudypoints ?? "0" }}" max="15" style="width: 70%;"></progress>
+                        @foreach($courses as $course)
+                            @if($course->year == $period)
+                                @if((($course->period-1) % 4) + 1 == $block)
+                                     <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period)  ?? "0" }}" max="15" style="width: 70%;"></progress>
+                                 @endif
+                            @endif
+                        @endforeach
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 ml-2"><strong>Course</strong></div>
+                        <div class="col-lg-3"><strong>Course</strong></div>
                         <div class="col-lg-3"><strong>Cijfer</strong></div>
-                        <div class="col-lg-3 mr-2"><strong>Punten</strong></div>
+                        <div class="col-lg-5"><strong>Punten</strong></div>
                     </div>
                     <div class="row">
                         @foreach($courses as $course)
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
-                                <div class="col-lg-4 ml-2">
+                                <div class="col-lg-3">
                                     {{ $course->name }}
                                 </div>
                                 <div class="col-lg-3">
                                     {{ $course->grade }}
                                 </div>
-                                <div class="col-lg-3 mr-2">
+                                <div class="col-lg-5">
                                     <div class="d-flex justify-content-between">
                                         <span>
-                                            @if($course->finished != null)
-                                                {{ $course->study_points }}
+                                            @if($course->points_received != null)
+                                                {{ $course->points_received }}
                                             @else
                                                 0
                                             @endif
@@ -49,14 +55,19 @@
                                         </span>
                                     </div>
                                 </div>
+
+                                <div style="border-top: 1px solid black; width: 100%">
+                                    <span class="ml-1">Totaal behaalde studiepunten:
+                                        {{ $course->getTotalBlockPoints($course->year, $course->period) }}
+                                        /
+                                        {{ $course->getTotalReceivableBlockPoints($course->year, $course->period) }}
+                                    </span>
+                                </div>
                                 @endif
                             @endif
                         @endforeach
                     </div>
-                    <br>
-                    <div class="row" style="border-top: 1px solid black">
-                        <span>Totaal behaalde studiepunten: 0 / 15</span>
-                    </div>
+
                 </div>
                 @endforeach
             </div>

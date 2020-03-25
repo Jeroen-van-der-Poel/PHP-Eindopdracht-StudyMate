@@ -41,4 +41,32 @@ class Course extends Model
     {
         return $this->hasOne(ExamMethod::class);
     }
+
+    public function getTotalBlockPoints($year, $block)
+    {
+        $courses = Course::all();
+        $count = 0;
+        foreach ($courses as $course){
+            if($course->year == $year){
+                if($course->period == $block){
+                    $count += $course->points_received;
+                }
+            }
+        }
+        return $count;
+    }
+
+    public function getTotalReceivableBlockPoints($year, $block)
+    {
+        $courses = Course::all();
+        $count = 0;
+        foreach ($courses as $course){
+            if($course->year == $year){
+                if($course->period == $block){
+                    $count += $course->study_points;
+                }
+            }
+        }
+        return $count;
+    }
 }
