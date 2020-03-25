@@ -18,11 +18,18 @@
             <div class="row">
                 @foreach($blocks as $block)
                 <div class="col-lg-3" style="border: 1px solid black">
-                    <p>Blok {{ $block }}</p>
+                    <div class="d-flex justify-content-between">
+                        <p>Blok {{ $count += 1 }}</p>
+                        <progress class="mt-1" value="{{ $totalstudypoints ?? "0" }}" max="15" style="width: 70%;"></progress>
+                    </div>
+                    <div class="d-flex justify-content-between ml-2 mr-5">
+                        <p><strong>Course</strong></p>
+                        <p><strong>Punten</strong></p>
+                    </div>
                     <div class="row">
                         @foreach($courses as $course)
                             @if($course->year == $period)
-                                @if($course->period % 4 == $block)
+                                @if((($course->period-1) % 4) + 1 == $block)
                                 <div class="col-lg-7 ml-2">
                                     {{ $course->name }}
                                 </div>

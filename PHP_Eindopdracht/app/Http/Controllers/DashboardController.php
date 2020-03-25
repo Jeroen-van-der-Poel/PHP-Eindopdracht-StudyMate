@@ -11,6 +11,7 @@ class DashboardController extends Controller
     {
         $periodes = [1, 2, 3, 4];
         $blocks = [1, 2, 3, 4];
+        $count = 1;
         $totalstudypoints = 0;
         $courses = Course::all();
             foreach($courses as $course){
@@ -18,6 +19,6 @@ class DashboardController extends Controller
                     $totalstudypoints += $course->study_points;
                 }
             }
-        return View('Dashboard/index', compact('periodes', 'totalstudypoints', 'courses', 'blocks'));
+        return View('Dashboard/index', compact('periodes', 'totalstudypoints', 'courses', 'blocks', 'count'));
     }
 }
