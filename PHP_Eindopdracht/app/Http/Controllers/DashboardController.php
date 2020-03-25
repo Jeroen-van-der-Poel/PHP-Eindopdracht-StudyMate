@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         $periodes = [1, 2, 3, 4];
         $blocks = [1, 2, 3, 4];
-        $count = 1;
+        $count = 0;
         $totalstudypoints = 0;
         $courses = Course::all();
             foreach($courses as $course){

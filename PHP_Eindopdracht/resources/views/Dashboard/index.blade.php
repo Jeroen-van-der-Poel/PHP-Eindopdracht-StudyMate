@@ -22,18 +22,22 @@
                         <p>Blok {{ $count += 1 }}</p>
                         <progress class="mt-1" value="{{ $totalstudypoints ?? "0" }}" max="15" style="width: 70%;"></progress>
                     </div>
-                    <div class="d-flex justify-content-between ml-2 mr-5">
-                        <p><strong>Course</strong></p>
-                        <p><strong>Punten</strong></p>
+                    <div class="row">
+                        <div class="col-lg-4 ml-2"><strong>Course</strong></div>
+                        <div class="col-lg-3"><strong>Cijfer</strong></div>
+                        <div class="col-lg-3 mr-2"><strong>Punten</strong></div>
                     </div>
                     <div class="row">
                         @foreach($courses as $course)
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
-                                <div class="col-lg-7 ml-2">
+                                <div class="col-lg-4 ml-2">
                                     {{ $course->name }}
                                 </div>
-                                <div class="col-lg-4 mr-2">
+                                <div class="col-lg-3">
+                                    10
+                                </div>
+                                <div class="col-lg-3 mr-2">
                                     <div class="d-flex justify-content-between">
                                         <span>
                                             @if($course->finished != null)
@@ -48,6 +52,10 @@
                                 @endif
                             @endif
                         @endforeach
+                    </div>
+                    <br>
+                    <div class="row" style="border-top: 1px solid black">
+                        <span>Totaal behaalde studiepunten: 0 / 15</span>
                     </div>
                 </div>
                 @endforeach
