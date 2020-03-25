@@ -8,7 +8,7 @@
                 <span>
                     <a href="/deadline">Default</a> |
                     <a href="/deadline?sort=teacherid">Docent</a> |
-                    <a href="/deadline?sort=courseid">Module</a> |
+                    <a href="/deadline?sort=courseid">Course</a> |
                     <a href="/deadline?sort=duedate">Tijdstip</a> |
                     <a href="/deadline?sort=categorie">Categorie</a>
                 </span>
@@ -30,7 +30,7 @@
                         <thead>
                         <tr>
                             <th>Opdracht</th>
-                            <th>Vak/Module</th>
+                            <th>Course</th>
                             <th>Docent</th>
                             <th>Tentamen/Inlever Datum</th>
                             <th>Categorie</th>
@@ -92,7 +92,7 @@
                             <thead>
                             <tr>
                                 <th>Opdracht</th>
-                                <th>Vak/Module</th>
+                                <th>Course</th>
                                 <th>Docent</th>
                                 <th>Tentamen/Inlever Datum</th>
                                 <th>Categorie</th>
