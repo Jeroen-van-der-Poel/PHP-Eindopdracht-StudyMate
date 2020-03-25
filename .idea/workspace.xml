@@ -116,6 +116,8 @@
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/psr/log" />
       <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/laravel/dusk" />
+      <path value="$PROJECT_DIR$/PHP_Eindopdracht/vendor/php-webdriver/webdriver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZRoxWeBroNA2Zib0JW1ywbQavR" />
@@ -127,7 +129,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/Course" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -150,6 +152,7 @@
       <workItem from="1584882815924" duration="2108000" />
       <workItem from="1584956284225" duration="800000" />
       <workItem from="1585055671985" duration="6718000" />
+      <workItem from="1585143581557" duration="1472000" />
     </task>
     <servers />
   </component>

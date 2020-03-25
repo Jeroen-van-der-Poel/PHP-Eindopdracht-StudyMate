@@ -16,10 +16,12 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('year')->nullable();
             $table->integer('period');
             $table->unsignedBigInteger('coordinator');
             $table->unsignedBigInteger('exam_method_id');
             $table->integer('study_points');
+            $table->dateTime('finished')->nullable();
             $table->timestamps();
         });
     }

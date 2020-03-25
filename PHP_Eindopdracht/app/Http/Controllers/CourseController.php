@@ -27,6 +27,23 @@ class CourseController extends Controller
         ]);
         $course = Course::orderBy('id', 'desc')->firstOrFail();
         $course->teachers()->attach(request('teachers_course'));
+        if($request->period == "1" ||$request->period == "2" ||$request->period == "3" ||$request->period == "4")
+        {
+            $course->year = 1;
+        }
+        else if($request->period == "5" ||$request->period == "6" ||$request->period == "7" ||$request->period == "8")
+        {
+            $course->year = 2;
+        }
+        else if($request->period == "9" ||$request->period == "10" ||$request->period == "11" ||$request->period == "12")
+        {
+            $course->year = 3;
+        }
+        else if($request->period == "13" ||$request->period == "14" ||$request->period == "15" ||$request->period == "16")
+        {
+            $course->year = 4;
+        }
+        $course->save();
         return redirect('/admin');
     }
 
