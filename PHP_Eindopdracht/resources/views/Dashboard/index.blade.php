@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3"><strong>Course</strong></div>
-                        <div class="col-lg-3"><strong>Cijfer</strong></div>
+                        <div class="col-lg-3 ml-1"><strong>Cijfer</strong></div>
                         <div class="col-lg-5"><strong>Punten</strong></div>
                     </div>
                     <div class="row">
@@ -40,7 +40,7 @@
                                 <div class="col-lg-3">
                                     {{ $course->name }}
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 ml-1">
                                     {{ $course->grade }}
                                 </div>
                                 <div class="col-lg-5">
