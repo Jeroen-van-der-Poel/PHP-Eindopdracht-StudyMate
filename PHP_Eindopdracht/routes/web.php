@@ -34,6 +34,11 @@ Route::get('/editCourse/{id}', 'CourseController@edit');
 Route::patch('/editCourse/{id}', 'CourseController@update');
 Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');
 
+Route::post('/upload/{id}', 'UploadController@store');
+
+Route::patch('/assign_teachers_course/{id}', 'CourseController@assignTeachersToCourse');
+
+
 Route::get('/deadline', 'DeadlineController@index');
 Route::get('/addDeadline', 'DeadlineController@create');
 Route::post('/deadline', 'DeadlineController@store');

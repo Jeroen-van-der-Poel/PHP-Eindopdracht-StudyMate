@@ -13,6 +13,6 @@ class AdminController extends Controller
     {
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $courses = Course::orderBy('id', 'desc')->get();
-        return view('Admin-Area/index' , compact('teachers','courses' ));
+        return view('Admin-Area/index' , compact('teachers','courses'));
     }
 }

@@ -41,7 +41,7 @@
                         <label for="coordinator" class="col-md-4 col-form-label pl-0">Coördinator</label>
                             <select name="coordinator" class="form-control">
                                 @foreach($teachers as $teacher)
-                                    <option value="{{$teacher->name}}">{{$teacher->name}}</option>
+                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
                                 @endforeach
                             </select>
                         @error('coordinator')
@@ -54,10 +54,9 @@
                     <div class="form-group row">
                         <label for="test_method" class="col-md-4 col-form-label pl-0">Soort Examen</label>
                         <select name="test_method" class="form-control">
-                            <option value="Tentamen">Tentamen</option>
-                            <option value="GroepsAssessment">Groep Assessment</option>
-                            <option value="Individueel Assessment">Individueel Assessment</option>
-                            <option value="Opdrachten">Opdrachten</option>
+                            @foreach($exam_methods as $exam_method)
+                                <option value="{{ $exam_method->id }}">{{ $exam_method->title }}</option>
+                            @endforeach
                         </select>
                         @error('test_method')
                         <span class="invalid-feedback" role="alert">
@@ -78,9 +77,25 @@
                         @enderror
                     </div>
 
+                    <div class="form-group row">
+                        <label for="teachers_course" class="col-md-4 col-form-label pl-0">Docenten</label>
+                        <select name="teachers_course[]" class="form-control" multiple>
+                            @foreach($teachers as $teacher)
+                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('tags')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
                     <div class="form-group row pt-4 pb-5">
                         <button class="btn btn-primary">Opslaan</button>
                     </div>
+
 
                 </div>
             </div>

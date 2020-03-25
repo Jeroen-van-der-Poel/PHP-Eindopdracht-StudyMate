@@ -63,7 +63,7 @@
                 <div class="table-responsive">
                         <div class="card-header d-flex justify-content-between">
                             <span><i class="fas fa-users"></i>Vakken overzicht</span>
-                            <span><a href="/addCourse">Vakken Toevoegen</a></span>
+                            <span><a href="/addCourse">Vak Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
 
@@ -74,6 +74,7 @@
                             <th>Coördinator</th>
                             <th>Soort examen</th>
                             <th>Studiepunten</th>
+                            <th>Docenten</th>
                             <th>Operaties</th>
                         </tr>
                         </thead>
@@ -84,9 +85,10 @@
                             <tr>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->period }}</td>
-                                <td>{{ \App\Teacher::where('id', $course->coordinator)->firstOrFail()->name }}</td>
-                                <td>{{ $course->test_method}}</td>
+                                <td>{{ $course->Coordinator($course->coordinator) }}</td>
+                                <td>{{ $course->Exam($course->exam_method_id)}}</td>
                                 <td>{{ $course->study_points}}</td>
+                                <td>{{ $course->teachers()->pluck('name')->implode(' ') }}</td>
                                 <td>
                                     <form action="/editCourse/{{$course->id}}" method="GET">
                                         <div class="form-group">
@@ -102,6 +104,45 @@
                                             <input type="submit" class="btn btn-danger delete-course" value="Verwijderen">
                                         </div>
                                     </form>
+                                    @if($course->Exam($course->exam_method_id) == "Individueel Assessment")
+                                        @if(!$course->HasUploadedFile($course->id))
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit">
+                                                Upload
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">File uploaden</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form action="/upload/{{$course->id}}" method="post" enctype="multipart/form-data">
+                                                            {{@csrf_field()}}
+                                                            <div class="modal-body">
+                                                                <label for="file">File</label>
+                                                                <input type="file" accept="zip/*" name="file" required>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                                                                <div class="form-group">
+                                                                    <input type="submit" class="btn btn-success" value="Opslaan">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @else
+                                                <div class="form-group">
+                                                    <input type="submit" class="btn btn-primary d-flex float-right" value="Download">
+                                                </div>
+                                            @endif
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
