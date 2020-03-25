@@ -13,22 +13,39 @@
         </div>
         <hr>
 
-        @foreach($periodes as $key => $period)
+        @foreach($periodes as $period)
             <h2>Jaar {{ $period }}</h2>
             <div class="row">
-                <div class="col-lg-3" style="border: 1px solid black">1
-
+                @foreach($blocks as $block)
+                <div class="col-lg-3" style="border: 1px solid black">
+                    <p>Blok {{ $block }}</p>
+                    <div class="row">
+                        @foreach($courses as $course)
+                            @if($course->year == $period)
+                                @if($course->period % 4 == $block)
+                                <div class="col-lg-7 ml-2">
+                                    {{ $course->name }}
+                                </div>
+                                <div class="col-lg-4 mr-2">
+                                    <div class="d-flex justify-content-between">
+                                        <span>
+                                            @if($course->finished != null)
+                                                {{ $course->study_points }}
+                                            @else
+                                                0
+                                            @endif
+                                            / {{ $course->study_points }}
+                                        </span>
+                                    </div>
+                                </div>
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
-                <div class="col-lg-3" style="border: 1px solid black">2
-
-                </div>
-                <div class="col-lg-3" style="border: 1px solid black">3
-
-                </div>
-                <div class="col-lg-3" style="border: 1px solid black">4
-
-                </div>
+                @endforeach
             </div>
+            <br>
         @endforeach
 
     </div>

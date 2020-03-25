@@ -259,21 +259,12 @@
     }
 
     /* Footer */
-    .footer{
-        background-color: #23232e;
-        color: white;
-        height: 275px;
-        position: relative;
-        width: 100%;
-    }
-
     .footer .footer-bottom{
         background: #141418;
         color: white;
         height: 50px;
         width: 100%;
         text-align: center;
-        position: absolute;
         bottom: 0;
         left: 0;
         padding-top: 20px;
