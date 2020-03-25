@@ -8,15 +8,29 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?data=%7B%7B url('http://127.0.0.1:8000/dashboard') }}&size=220x220&margin=0" alt="qrcode">
             </div>
             <div class="col-lg-8 col-lg-offset-1 d-flex justify-content-center">
-                <progress></progress>
+                <progress class="pt-4" value="{{ $totalstudypoints }}" max="180" style="width: 100%;"></progress>
             </div>
         </div>
         <hr>
-        <div class="row pb-4  pt-4">
-            <div class="col-lg-12 col-lg-offset-1">
 
+        @foreach($periodes as $key => $period)
+            <h2>Jaar {{ $period }}</h2>
+            <div class="row">
+                <div class="col-lg-3" style="border: 1px solid black">1
+
+                </div>
+                <div class="col-lg-3" style="border: 1px solid black">2
+
+                </div>
+                <div class="col-lg-3" style="border: 1px solid black">3
+
+                </div>
+                <div class="col-lg-3" style="border: 1px solid black">4
+
+                </div>
             </div>
-        </div>
+        @endforeach
+
     </div>
 
 @endsection
