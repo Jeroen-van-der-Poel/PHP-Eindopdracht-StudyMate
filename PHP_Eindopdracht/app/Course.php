@@ -26,27 +26,9 @@ class Course extends Model
         }
     }
 
-    public function HasUploadedFile($id)
-    {
-        if($id != ""){
-            if(Upload::where('course_id', $id)->exists()){
-                return true;
-            }
-                return false;
-        }
-        else {
-            return false;
-        }
-    }
-
     public function teachers()
     {
         return $this->BelongsToMany(Teacher::class);
-    }
-
-    public function course()
-    {
-        return $this->hasOne(Upload::class);
     }
 
     public function deadlines()
