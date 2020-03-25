@@ -73,14 +73,6 @@
                         <span class="link-text">Inloggen</span>
                     </a>
                 </li>
-                @if (Route::has('register'))
-                    <li class="nav-itemx">
-                        <a href="{{ route('register') }}" class="nav-linkx">
-                            <i class="material-icons"><span class="fas fa-user-plus"></span></i>
-                            <span class="link-text">Registreren</span>
-                        </a>
-                    </li>
-                @endif
             @else
                 <li id="test1" class="nav-itemx">
                     <a href="{{ route('logout') }}"
