@@ -35,7 +35,7 @@
                                     {{ $course->name }}
                                 </div>
                                 <div class="col-lg-3">
-                                    10
+                                    {{ $course->grade }}
                                 </div>
                                 <div class="col-lg-3 mr-2">
                                     <div class="d-flex justify-content-between">
