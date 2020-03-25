@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="courseid" class="col-md-4 col-form-label pl-0">Vak/Course</label>
+                        <label for="courseid" class="col-md-4 col-form-label pl-0">Course</label>
                         <select name="courseid" class="form-control">
                             @foreach($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
