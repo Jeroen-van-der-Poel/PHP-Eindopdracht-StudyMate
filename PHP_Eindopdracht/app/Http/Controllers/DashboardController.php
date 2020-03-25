@@ -17,6 +17,10 @@ class DashboardController extends Controller
             foreach($courses as $course){
                     $totalstudypoints += $course->points_received;
             }
-        return View('Dashboard/index', compact('periodes', 'totalstudypoints', 'courses', 'blocks', 'count'));
+        $totalAvailablePoint = 0;
+        foreach($courses as $course){
+            $totalAvailablePoint += $course->study_points;
+        }
+        return View('Dashboard/index', compact('periodes', 'totalstudypoints', 'courses', 'blocks', 'count', 'totalAvailablePoint'));
     }
 }
