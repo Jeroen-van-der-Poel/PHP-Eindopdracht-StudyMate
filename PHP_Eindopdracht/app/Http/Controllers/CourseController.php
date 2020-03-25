@@ -73,4 +73,24 @@ class CourseController extends Controller
         return redirect("/admin");
     }
 
+    public function giveGrade($id){
+        $course = Course::findOrFail($id);
+        $data = request()->validate([
+            'grade' => 'required'
+        ]);
+        if(request('grade') >= 5.5)
+        {
+            $amountOfStudyPoints = $course->study_points;
+            $course->points_received = $amountOfStudyPoints;
+            $course->save();
+        }
+        else{
+            $course->points_received = 0;
+            $course->save();
+        }
+        $course->fill($data)->save();
+
+        return redirect('/admin');
+    }
+
 }

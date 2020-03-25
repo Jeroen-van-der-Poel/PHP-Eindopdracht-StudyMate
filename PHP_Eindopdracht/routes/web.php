@@ -30,6 +30,7 @@ Route::delete('/teacher/{id}', 'TeacherController@destroy')->name('teacher.destr
 
 Route::get('/addCourse', 'CourseController@create');
 Route::post('/course', 'CourseController@store');
+Route::post('/giveGrade/{id}', 'CourseController@giveGrade');
 Route::get('/editCourse/{id}', 'CourseController@edit');
 Route::patch('/editCourse/{id}', 'CourseController@update');
 Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');

@@ -28,7 +28,7 @@
                     <div class="form-group row">
                         <label for="period" class="col-md-4 col-form-label pl-0">Periode</label>
 
-                        <input id="period" type="number" class="form-control @error('period') is-invalid @enderror" name="period" value="{{ old('period') }}" required autocomplete="period" autofocus>
+                        <input min="1" max="16" id="period" type="number" class="form-control @error('period') is-invalid @enderror" name="period" value="{{ old('period') }}" required autocomplete="period" autofocus>
 
                         @error('period')
                         <span class="invalid-feedback" role="alert">
@@ -68,7 +68,7 @@
                     <div class="form-group row">
                         <label for="study_points" class="col-md-4 col-form-label pl-0">Studiepunten</label>
 
-                        <input id="study_points" type="number" class="form-control @error('study_points') is-invalid @enderror" name="study_points" value="{{ old('study_points') }}" required autocomplete="study_points" autofocus>
+                        <input id="study_points" type="number" step="0.5" class="form-control @error('study_points') is-invalid @enderror" name="study_points" value="{{ old('study_points') }}" required autocomplete="study_points" autofocus>
 
                         @error('study_points')
                         <span class="invalid-feedback" role="alert">

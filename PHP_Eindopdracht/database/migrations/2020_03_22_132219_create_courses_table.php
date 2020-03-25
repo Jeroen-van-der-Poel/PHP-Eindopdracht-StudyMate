@@ -20,8 +20,10 @@ class CreateCoursesTable extends Migration
             $table->integer('period');
             $table->unsignedBigInteger('coordinator');
             $table->unsignedBigInteger('exam_method_id');
-            $table->integer('study_points');
-            $table->dateTime('finished')->nullable();
+            $table->decimal('study_points');
+            $table->decimal('points_received')->nullable();
+            $table->decimal('grade')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

@@ -74,6 +74,7 @@
                             <th>Coördinator</th>
                             <th>Soort examen</th>
                             <th>Studiepunten</th>
+                            <th>Cijfer</th>
                             <th>Docenten</th>
                             <th>Operaties</th>
                         </tr>
@@ -88,6 +89,7 @@
                                 <td>{{ $course->Coordinator($course->coordinator) }}</td>
                                 <td>{{ $course->Exam($course->exam_method_id)}}</td>
                                 <td>{{ $course->study_points}}</td>
+                                <td>{{ $course->grade}}</td>
                                 <td>{{ $course->teachers()->pluck('name')->implode(' ') }}</td>
                                 <td>
                                     <form action="/editCourse/{{$course->id}}" method="GET">
@@ -104,15 +106,48 @@
                                             <input type="submit" class="btn btn-danger delete-course" value="Verwijderen">
                                         </div>
                                     </form>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#grade{{$course->id}}">
+                                        Cijfer
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="grade{{$course->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="myModalLabel">Cijfer van course</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form action="/giveGrade/{{$course->id}}" method="post" enctype="multipart/form-data">
+                                                    {{@csrf_field()}}
+                                                    <div class="modal-body">
+                                                        <label for="number">Cijfer</label>
+                                                        <input type="number" min="1" max="10" step="0.1" class="form-control" value="{{ old('grade') ?? $course->grade }}" name="grade" id="grade" required>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                                                        <div class="form-group">
+                                                            <input type="submit" class="btn btn-success" value="Opslaan">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     @if($course->Exam($course->exam_method_id) == "Individueel Assessment")
-                                        @if(!$course->HasUploadedFile($course->id))
+                                        @if(!$course->file)
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit">
+                                            <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit{{$course->id}}">
                                                 Upload
                                             </button>
 
                                             <!-- Modal -->
-                                            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="edit{{$course->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -138,9 +173,11 @@
                                                 </div>
                                             </div>
                                             @else
-                                                <div class="form-group">
-                                                    <input type="submit" class="btn btn-primary d-flex float-right" value="Download">
-                                                </div>
+                                                <a href="/uploads/{{$course->file}}" download="/uploads/{{$course->file}}">
+                                                    <button type="button" class="btn btn-primary d-flex float-right">
+                                                        Download
+                                                    </button>
+                                                </a>
                                             @endif
                                     @endif
                                 </td>

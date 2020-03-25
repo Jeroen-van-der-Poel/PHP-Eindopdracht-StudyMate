@@ -152,7 +152,7 @@
       <workItem from="1584882815924" duration="2108000" />
       <workItem from="1584956284225" duration="800000" />
       <workItem from="1585055671985" duration="6718000" />
-      <workItem from="1585143581557" duration="1472000" />
+      <workItem from="1585143581557" duration="9288000" />
     </task>
     <servers />
   </component>
@@ -160,6 +160,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="737" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585147591927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585147591927" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585064200753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

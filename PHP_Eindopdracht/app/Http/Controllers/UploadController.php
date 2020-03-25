@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Http\Controllers\Controller;
 use App\Upload;
+use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -16,13 +18,15 @@ class UploadController extends Controller
 
     public function store(Request $request, $id)
     {
-        Upload::create([
-            'file' => $request->file('file')->store('file', 'public'),
-            'course_id' => $id,
+        $course = Course::findOrFail($id);
+        $request->validate([
+            'file' => 'mimes:pdf,xlx,csv,zip|max:2048',
         ]);
-
-        if ($request->wantsJson()) {
-            return response([], 204);
+        if ($request->file != null) {
+            $fileName = time() . '_' . $request->file->getClientOriginalName();
+            $request->file->move(public_path('uploads'), $fileName);
+            $course->file = $fileName;
+            $course->save();
         }
 
         return back();
