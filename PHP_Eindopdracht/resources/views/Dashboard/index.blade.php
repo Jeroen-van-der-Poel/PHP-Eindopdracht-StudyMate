@@ -13,22 +13,54 @@
         </div>
         <hr>
 
-        @foreach($periodes as $key => $period)
+        @foreach($periodes as $period)
             <h2>Jaar {{ $period }}</h2>
             <div class="row">
-                <div class="col-lg-3" style="border: 1px solid black">1
-
+                @foreach($blocks as $block)
+                <div class="col-lg-3" style="border: 1px solid black">
+                    <div class="d-flex justify-content-between">
+                        <p>Blok {{ $count += 1 }}</p>
+                        <progress class="mt-1" value="{{ $totalstudypoints ?? "0" }}" max="15" style="width: 70%;"></progress>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 ml-2"><strong>Course</strong></div>
+                        <div class="col-lg-3"><strong>Cijfer</strong></div>
+                        <div class="col-lg-3 mr-2"><strong>Punten</strong></div>
+                    </div>
+                    <div class="row">
+                        @foreach($courses as $course)
+                            @if($course->year == $period)
+                                @if((($course->period-1) % 4) + 1 == $block)
+                                <div class="col-lg-4 ml-2">
+                                    {{ $course->name }}
+                                </div>
+                                <div class="col-lg-3">
+                                    10
+                                </div>
+                                <div class="col-lg-3 mr-2">
+                                    <div class="d-flex justify-content-between">
+                                        <span>
+                                            @if($course->finished != null)
+                                                {{ $course->study_points }}
+                                            @else
+                                                0
+                                            @endif
+                                            / {{ $course->study_points }}
+                                        </span>
+                                    </div>
+                                </div>
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>
+                    <br>
+                    <div class="row" style="border-top: 1px solid black">
+                        <span>Totaal behaalde studiepunten: 0 / 15</span>
+                    </div>
                 </div>
-                <div class="col-lg-3" style="border: 1px solid black">2
-
-                </div>
-                <div class="col-lg-3" style="border: 1px solid black">3
-
-                </div>
-                <div class="col-lg-3" style="border: 1px solid black">4
-
-                </div>
+                @endforeach
             </div>
+            <br>
         @endforeach
 
     </div>
