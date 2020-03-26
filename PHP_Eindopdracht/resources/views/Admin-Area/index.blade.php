@@ -160,7 +160,12 @@
                                                             {{@csrf_field()}}
                                                             <div class="modal-body">
                                                                 <label for="file">File</label>
-                                                                <input type="file" accept="zip/*" name="file" required>
+                                                                <input class="form-control @error('file') is-invalid @enderror" type="file" accept="zip/*" name="file" required>
+                                                                @error('file')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                         <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                @enderror
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>

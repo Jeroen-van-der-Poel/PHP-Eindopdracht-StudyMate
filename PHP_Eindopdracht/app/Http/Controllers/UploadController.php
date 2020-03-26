@@ -19,6 +19,7 @@ class UploadController extends Controller
     public function store(Request $request, $id)
     {
         $course = Course::findOrFail($id);
+
         $request->validate([
             'file' => 'mimes:pdf,xlx,csv,zip|max:2048',
         ]);
