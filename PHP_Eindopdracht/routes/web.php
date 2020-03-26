@@ -41,6 +41,6 @@ Route::patch('/assign_teachers_course/{id}', 'CourseController@assignTeachersToC
 Route::get('/deadline', 'DeadlineController@index');
 Route::get('/addDeadline', 'DeadlineController@create');
 Route::post('/deadline', 'DeadlineController@store');
-Route::patch('/deadline/edit', 'DeadlineController@update');
+Route::patch('/deadline/finish', 'DeadlineController@finish');
 
 Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');;

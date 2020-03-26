@@ -64,7 +64,7 @@ class DeadlineController extends Controller
         ]);
     }
 
-    public function update()
+    public function finish()
     {
         $deadlines = Deadline::orderBy('id', 'asc')->get();
         $datetime = Carbon::now();

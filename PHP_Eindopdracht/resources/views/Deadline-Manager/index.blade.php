@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <form action="/deadline/edit" enctype="multipart/form-data" method="post">
+        <form action="/deadline/finish" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
         <div class="row pb-4  pt-4">
