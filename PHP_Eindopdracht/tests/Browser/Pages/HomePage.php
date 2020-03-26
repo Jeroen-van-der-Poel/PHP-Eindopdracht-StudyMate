@@ -2,6 +2,7 @@
 
 namespace Tests\Browser\Pages;
 
+use App\Course;
 use Laravel\Dusk\Browser;
 
 class HomePage extends Page
@@ -13,7 +14,7 @@ class HomePage extends Page
      */
     public function url()
     {
-        return '/';
+        return '/dashboard';
     }
 
     /**
@@ -37,5 +38,12 @@ class HomePage extends Page
         return [
             '@element' => '#selector',
         ];
+    }
+
+    public function assertAllElementsVisible(Browser $browser) {
+        $courses = Course::all();
+        foreach ($courses as $course) {
+            $browser->assertSee($course->name);
+        }
     }
 }
