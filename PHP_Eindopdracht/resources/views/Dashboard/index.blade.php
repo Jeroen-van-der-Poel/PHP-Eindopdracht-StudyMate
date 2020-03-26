@@ -7,8 +7,10 @@
                 <h1>Scan de code</h1>
                 <img src="https://api.qrserver.com/v1/create-qr-code/?data=%7B%7B url('http://127.0.0.1:8000/dashboard') }}&size=220x220&margin=0" alt="qrcode">
             </div>
-            <div class="col-lg-8 col-lg-offset-1 d-flex justify-content-center">
-                <progress class="pt-4" value="{{ $totalstudypoints ?? "0" }}" max="{{ $totalAvailablePoint ?? 180 }}" style="width: 100%;"></progress>
+            <div class="col-lg-8 col-lg-offset-1">
+                <h2 class="d-flex justify-content-center">Voortgang studie</h2>
+                <br>
+                <progress class="pt-4" value="{{ $totalstudypoints ?? "0" }}" max="{{ $totalAvailablePoint ?? "180" }}" style="width: 100%;"></progress>
             </div>
         </div>
         <hr>
@@ -23,7 +25,7 @@
                         @foreach($courses as $course)
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
-                                     <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period)  ?? "0" }}" max="15" style="width: 70%;"></progress>
+                                     <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period)  ?? "0" }}" max="{{ $course->getTotalReceivableBlockPoints($course->year, $course->period) ?? "15" }}" style="width: 70%;"></progress>
                                  @endif
                             @endif
                         @endforeach
