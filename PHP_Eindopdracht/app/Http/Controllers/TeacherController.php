@@ -20,7 +20,6 @@ class TeacherController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'email' => 'nullable|email:rfc,dns',
-            'phone_number' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'has_taught' => ''
         ]);
 
@@ -44,7 +43,6 @@ class TeacherController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'email' => 'nullable|email:rfc,dns',
-            'phone_number' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'has_taught' => ''
         ]);
 

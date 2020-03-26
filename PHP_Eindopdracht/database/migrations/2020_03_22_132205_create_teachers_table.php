@@ -17,7 +17,6 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->nullable();
-            $table->string('phone_number')->nullable();
             $table->boolean('has_taught')->default(0);
             $table->timestamps();
         });

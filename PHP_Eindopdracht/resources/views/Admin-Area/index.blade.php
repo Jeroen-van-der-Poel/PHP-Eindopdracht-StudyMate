@@ -15,7 +15,6 @@
                         <tr>
                             <th>Naam</th>
                             <th>Email</th>
-                            <th>Telefoonnummer</th>
                             <th>Heeft jouw les gegeven</th>
                             <th>Operaties</th>
 
@@ -30,7 +29,6 @@
 
                                 <td>{{ $teacher->name }}</td>
                                 <td>{{ $teacher->email }}</td>
-                                <td>{{ $teacher->phone_number }}</td>
                                 <td>{{ $teacher->HasTaught() }}</td>
 
                                 <td>
