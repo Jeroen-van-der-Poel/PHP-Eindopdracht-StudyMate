@@ -10,7 +10,7 @@
                 <div class="col-6 offset-3">
 
                     <div class="form-group row">
-                        <h2 class="pl-0 pt-5">Aanmaken vak</h2>
+                        <h2 class="pl-0 pt-5">Course Aanmaken</h2>
                     </div>
 
                     <div class="form-group row">

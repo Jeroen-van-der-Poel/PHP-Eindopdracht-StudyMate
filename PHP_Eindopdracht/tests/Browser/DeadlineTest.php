@@ -23,14 +23,14 @@ class DeadlineTest extends DuskTestCase
             $browser->visit('/addDeadline')
                 ->assertSee('Deadline aanmaken')
                 ->type('title', 'TestDeadline')
-                ->select('teacherid')
-                ->select('courseid')
+                ->select('teacher_id')
+                ->select('course_id')
                 ->type('duedate', '5')
                 ->type('duedate', '4')
                 ->type('duedate', '2020')
                 ->keys('#duedate', ['{tab}'])
                 ->type('duedate', '2222')
-                ->select('categorie')
+                ->select('exam_method_id')
                 ->press('Deadline Opslaan')
                 ->assertPathIs('/deadline');
         });
