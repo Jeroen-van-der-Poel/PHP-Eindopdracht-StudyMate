@@ -8,9 +8,13 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?data=%7B%7B url('http://127.0.0.1:8000/dashboard') }}&size=220x220&margin=0" alt="qrcode">
             </div>
             <div class="col-lg-8 col-lg-offset-1">
-                <h2 class="d-flex justify-content-center">Voortgang studie</h2>
+                <h2 class="d-flex justify-content-center">Voortgang Studie</h2>
                 <br>
                 <progress class="pt-4" value="{{ $totalstudypoints ?? "0" }}" max="{{ $totalAvailablePoint ?? "180" }}" style="width: 100%;"></progress>
+                <div class="d-flex justify-content-between">
+                    <span>0</span>
+                    <span>{{ $totalAvailablePoint ?? "180" }}</span>
+                </div>
             </div>
         </div>
         <hr>
