@@ -46,4 +46,13 @@ class HomePage extends Page
             $browser->assertSee($course->name);
         }
     }
+
+    public function countStudyPoints(Browser $browser) {
+        $courses = Course::all();
+        $count = 0;
+        foreach ($courses as $course) {
+           $count += $course->points_received;
+        }
+        $browser->assertSee($count);
+    }
 }

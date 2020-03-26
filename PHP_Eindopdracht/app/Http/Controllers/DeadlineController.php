@@ -69,11 +69,13 @@ class DeadlineController extends Controller
         $deadlines = Deadline::orderBy('id', 'asc')->get();
         $datetime = Carbon::now();
 
-        foreach (request('finished') as $fin){
-            foreach ($deadlines as $deadline){
-                if($fin == $deadline->id){
-                    $deadline->finished = $datetime;
-                    $deadline->save();
+        if(request('finished') != null) {
+            foreach (request('finished') as $fin) {
+                foreach ($deadlines as $deadline) {
+                    if ($fin == $deadline->id) {
+                        $deadline->finished = $datetime;
+                        $deadline->save();
+                    }
                 }
             }
         }

@@ -17,7 +17,7 @@ class DashboardTest extends DuskTestCase
      * @return void
      */
 
-    public function testAllElementsAvailable()
+    public function test_All_Elements_Available()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new HomePage())
@@ -25,4 +25,11 @@ class DashboardTest extends DuskTestCase
         });
     }
 
+
+    public function test_connection(){
+        $this->browse(function (Browser $browser) {
+            $browser->visit(new HomePage())
+                ->countStudyPoints();
+        });
+    }
 }
