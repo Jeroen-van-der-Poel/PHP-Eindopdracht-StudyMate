@@ -10,7 +10,7 @@
             <div class="col-lg-8 col-lg-offset-1">
                 <h2 class="d-flex justify-content-center">Voortgang Studie</h2>
                 <br>
-                <progress class="pt-4" value="{{ $totalstudypoints ?? "0" }}" max="{{ $totalAvailablePoint ?? "180" }}" style="width: 100%;"></progress>
+                <progress class="pt-4" value="{{ $totalstudypoints}}" max="{{ $totalAvailablePoint}}" style="width: 100%;"></progress>
                 <div class="d-flex justify-content-between">
                     <span>0</span>
                     <span>{{ $totalAvailablePoint ?? "180" }}</span>
@@ -29,7 +29,7 @@
                         @foreach($courses as $course)
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
-                                     <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period)  ?? "0" }}" max="{{ $course->getTotalReceivableBlockPoints($course->year, $course->period) ?? "15" }}" style="width: 70%;"></progress>
+                                     <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period) }}" max="{{ $course->getTotalReceivableBlockPoints($course->year, $course->period)}}" style="width: 70%;"></progress>
                                  @endif
                             @endif
                         @endforeach

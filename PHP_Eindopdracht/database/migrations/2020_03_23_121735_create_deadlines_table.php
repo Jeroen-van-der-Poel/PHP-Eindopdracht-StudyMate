@@ -19,13 +19,13 @@ class CreateDeadlinesTable extends Migration
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('course_id');
             $table->dateTime('duedate');
-            $table->string('exam_method_id');
+            $table->unsignedBigInteger('exam_method_id');
             $table->dateTime('finished')->nullable();
             $table->timestamps();
 
             $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-            $table->foreign('exam_method_id')->references('id')->on('exam_methods')->onDelete('cascade');
+            //$table->foreign('exam_method_id')->references('id')->on('exam_methods')->onDelete('cascade');
         });
     }
 

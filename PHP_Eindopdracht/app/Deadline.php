@@ -50,7 +50,7 @@ class Deadline extends Model
         return $this->belongsTo(Teacher::class);
     }
 
-    public function exams()
+    public function exammethods()
     {
         return $this->belongsTo(ExamMethod::class);
     }
