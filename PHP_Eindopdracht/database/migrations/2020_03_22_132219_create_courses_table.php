@@ -25,6 +25,8 @@ class CreateCoursesTable extends Migration
             $table->decimal('grade')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
+
+            $table->foreign('coordinator')->references('id')->on('teachers')->onDelete('cascade');
         });
     }
 
