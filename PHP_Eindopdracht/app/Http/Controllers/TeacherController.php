@@ -19,12 +19,12 @@ class TeacherController extends Controller
 
         $data = request()->validate([
             'name' => 'required',
-            'email' => 'email:rfc,dns',
-            'phone_number' => 'required',
+            'email' => 'nullable|email:rfc,dns',
+            'phone_number' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'has_taught' => ''
         ]);
 
-        \App\Teacher::create($data);
+        Teacher::create($data);
 
         return redirect('/admin');
     }
@@ -43,8 +43,8 @@ class TeacherController extends Controller
 
         $data = request()->validate([
             'name' => 'required',
-            'email' => 'email:rfc,dns',
-            'phone_number' => 'required',
+            'email' => 'nullable|email:rfc,dns',
+            'phone_number' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'has_taught' => ''
         ]);
 

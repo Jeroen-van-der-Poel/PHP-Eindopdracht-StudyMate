@@ -129,7 +129,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht/public/uploads" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -152,7 +152,9 @@
       <workItem from="1584882815924" duration="2108000" />
       <workItem from="1584956284225" duration="800000" />
       <workItem from="1585055671985" duration="6718000" />
-      <workItem from="1585143581557" duration="9646000" />
+      <workItem from="1585143581557" duration="9837000" />
+      <workItem from="1585164847676" duration="1454000" />
+      <workItem from="1585230750526" duration="1790000" />
     </task>
     <servers />
   </component>
@@ -178,9 +180,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584901222935" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585057592333">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585170039529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585057592333" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585170039529" />
   </component>
 </project>
