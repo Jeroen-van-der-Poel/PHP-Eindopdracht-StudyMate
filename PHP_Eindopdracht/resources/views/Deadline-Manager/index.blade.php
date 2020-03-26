@@ -7,10 +7,10 @@
                  <h2>Sorteren</h2>
                 <span>
                     <a href="/deadline">Default</a> |
-                    <a href="/deadline?sort=teacherid">Docent</a> |
-                    <a href="/deadline?sort=courseid">Course</a> |
+                    <a href="/deadline?sort=teacher_id">Docent</a> |
+                    <a href="/deadline?sort=course_id">Course</a> |
                     <a href="/deadline?sort=duedate">Tijdstip</a> |
-                    <a href="/deadline?sort=categorie">Categorie</a>
+                    <a href="/deadline?sort=exam_method_id">Categorie</a>
                 </span>
             </div>
         </div>
