@@ -24,5 +24,5 @@ class DashboardTest extends DuskTestCase
                 ->assertAllElementsVisible();
         });
     }
-    
+
 }

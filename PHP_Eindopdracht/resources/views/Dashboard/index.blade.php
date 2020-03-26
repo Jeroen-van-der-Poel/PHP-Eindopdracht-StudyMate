@@ -30,6 +30,7 @@
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
                                      <progress class="mt-1" value="{{ $course->getTotalBlockPoints($course->year, $course->period) }}" max="{{ $course->getTotalReceivableBlockPoints($course->year, $course->period)}}" style="width: 70%;"></progress>
+                                    @break
                                  @endif
                             @endif
                         @endforeach
@@ -61,7 +62,13 @@
                                         </span>
                                     </div>
                                 </div>
-
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>
+                    @foreach($courses as $course)
+                        @if($course->year == $period)
+                            @if((($course->period-1) % 4) + 1 == $block)
                                 <div style="border-top: 1px solid black; width: 100%">
                                     <span class="ml-1">Totaal behaalde studiepunten:
                                         {{ $course->getTotalBlockPoints($course->year, $course->period) }}
@@ -69,11 +76,10 @@
                                         {{ $course->getTotalReceivableBlockPoints($course->year, $course->period) }}
                                     </span>
                                 </div>
-                                @endif
+                                @break
                             @endif
-                        @endforeach
-                    </div>
-
+                        @endif
+                    @endforeach
                 </div>
                 @endforeach
             </div>
