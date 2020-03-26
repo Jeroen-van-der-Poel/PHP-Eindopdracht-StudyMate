@@ -16,16 +16,16 @@ class CreateDeadlinesTable extends Migration
         Schema::create('deadlines', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->unsignedBigInteger('teacherid');
-            $table->unsignedBigInteger('courseid');
+            $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('course_id');
             $table->dateTime('duedate');
-            $table->string('categorie')->nullable();
+            $table->string('exam_method_id');
             $table->dateTime('finished')->nullable();
             $table->timestamps();
 
-            $table->foreign('teacherid')->references('id')->on('teachers')->onDelete('cascade');
-            $table->foreign('courseid')->references('id')->on('courses')->onDelete('cascade');
-
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('exam_method_id')->references('id')->on('exam_methods')->onDelete('cascade');
         });
     }
 

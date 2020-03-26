@@ -8,8 +8,31 @@ class Deadline extends Model
 {
     protected $guarded = [];
 
-    public function sortCategeorie(){
+    public function Exam($id){
+        if($id != ""){
+            return ExamMethod::where('id', $id)->firstOrFail()->title;
+        }
+        else {
+            return "";
+        }
+    }
 
+    public function GetTeacher($id){
+        if($id != ""){
+            return Teacher::where('id', $id)->firstOrFail()->name;
+        }
+        else {
+            return "";
+        }
+    }
+
+    public function GetCourse($id){
+        if($id != ""){
+            return Course::where('id', $id)->firstOrFail()->name;
+        }
+        else {
+            return "";
+        }
     }
 
     public function tags()
@@ -26,4 +49,10 @@ class Deadline extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+
+    public function exams()
+    {
+        return $this->belongsTo(ExamMethod::class);
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Deadline;
+use App\ExamMethod;
 use App\Tag;
 use App\Teacher;
 use Carbon\Carbon;
@@ -25,23 +26,25 @@ class DeadlineController extends Controller
 
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $courses = Course::orderBy('id', 'desc')->get();
+        $exam_methods = ExamMethod::all();
 
-        return View('Deadline-Manager/index', compact('deadlines', 'teachers', 'courses', 'finisheddeadlines'));
+        return View('Deadline-Manager/index', compact('deadlines', 'teachers', 'courses', 'finisheddeadlines', 'exam_methods'));
     }
 
     public function create()
     {
         $teachers = Teacher::orderBy('id', 'asc')->get();
         $courses = Course::orderBy('id', 'asc')->get();
+        $exam_methods = ExamMethod::all();
         $tags = Tag::orderBy('id', 'asc')->get();
-        return view('Deadline-Manager/create', compact('teachers', 'courses', 'tags'));
+        return view('Deadline-Manager/create', compact('teachers', 'courses', 'tags', 'exam_methods'));
     }
 
     public function store()
     {
         $this->validateDeadline();
 
-        $deadline = new Deadline(request(['title', 'teacherid', 'courseid', 'duedate', 'categorie']));
+        $deadline = new Deadline(request(['title', 'teacher_id', 'course_id', 'duedate', 'exam_method_id']));
         $deadline->save();
 
         $deadline->tags()->attach(request('tags'));
@@ -53,10 +56,10 @@ class DeadlineController extends Controller
     {
         return request()->validate([
             'title' => 'required',
-            'teacherid' => 'required',
-            'courseid' => 'required',
+            'teacher_id' => 'required',
+            'course_id' => 'required',
             'duedate' => 'required',
-            'categorie' => 'required',
+            'exam_method_id' => 'required',
             'tags' => 'exists:tags,id',
         ]);
     }
@@ -74,8 +77,8 @@ class DeadlineController extends Controller
                 }
             }
         }
-
         return redirect('/deadline');
     }
+
 }
 

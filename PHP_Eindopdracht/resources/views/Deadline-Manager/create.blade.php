@@ -25,14 +25,14 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="teacherid" class="col-md-4 col-form-label pl-0">Docent</label>
-                        <select name="teacherid" class="form-control">
+                        <label for="teacher_id" class="col-md-4 col-form-label pl-0">Docent</label>
+                        <select name="teacher_id" class="form-control">
                             @foreach($teachers as $teacher)
                                 <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                             @endforeach
                         </select>
 
-                        @error('teacherid')
+                        @error('teacher_id')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>
@@ -40,14 +40,14 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="courseid" class="col-md-4 col-form-label pl-0">Course</label>
-                        <select name="courseid" class="form-control">
+                        <label for="course_id" class="col-md-4 col-form-label pl-0">Course</label>
+                        <select name="course_id" class="form-control">
                             @foreach($courses as $course)
                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
                             @endforeach
                         </select>
 
-                        @error('courseid')
+                        @error('course_id')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>
@@ -67,13 +67,14 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="categorie" class="col-md-4 col-form-label pl-0">Categorie</label>
-                        <select name="categorie" class="form-control">
-                            <option value="Assessment">Assessment</option>
-                            <option value="Tentamen">Tentamen</option>
+                        <label for="exam_method_id" class="col-md-4 col-form-label pl-0">exam_method_id</label>
+                        <select name="exam_method_id" class="form-control">
+                            @foreach($exam_methods as $exam_method)
+                                <option value="{{ $exam_method->id }}">{{ $exam_method->title }}</option>
+                            @endforeach
                         </select>
 
-                        @error('categorie')
+                        @error('exam_method_id')
                         <span class="invalid-feedback" role="alert">
                                  <strong>{{ $message }}</strong>
                             </span>

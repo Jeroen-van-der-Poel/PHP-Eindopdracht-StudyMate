@@ -10,4 +10,9 @@ class ExamMethod extends Model
     {
         return $this->hasMany(Course::class);
     }
+
+    public function deadlines()
+    {
+        return $this->hasMany(Deadline::class);
+    }
 }

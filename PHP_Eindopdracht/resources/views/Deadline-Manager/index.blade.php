@@ -45,18 +45,10 @@
                             <tr>
 
                                 <td>{{ $deadline->title }}</td>
-                                @foreach($courses as $key => $course)
-                                    @if($course->id === $deadline->courseid)
-                                        <td>{{ $course->name }}</td>
-                                    @endif
-                                @endforeach
-                                @foreach($teachers as $key => $teacher)
-                                    @if($teacher->id === $deadline->teacherid)
-                                        <td>{{ $teacher->name }}</td>
-                                    @endif
-                                @endforeach
+                                <td>{{ $deadline->GetCourse($deadline->course_id) }}</td>
+                                <td>{{ $deadline->GetTeacher($deadline->teacher_id)}}</td>
                                 <td>{{ $deadline->duedate }}</td>
-                                <td>{{ $deadline->categorie }}</td>
+                                <td>{{ $deadline->Exam($deadline->exam_method_id)}}</td>
                                 <td>
                                     <ul>
                                     @foreach($deadline->tags as $tag)
@@ -107,18 +99,10 @@
                                 <tr>
 
                                     <td>{{ $deadline->title }}</td>
-                                    @foreach($courses as $key => $course)
-                                        @if($course->id === $deadline->courseid)
-                                            <td>{{ $course->name }}</td>
-                                        @endif
-                                    @endforeach
-                                    @foreach($teachers as $key => $teacher)
-                                        @if($teacher->id === $deadline->teacherid)
-                                            <td>{{ $teacher->name }}</td>
-                                        @endif
-                                    @endforeach
+                                    <td>{{ $deadline->GetCourse($deadline->course_id) }}</td>
+                                    <td>{{ $deadline->GetTeacher($deadline->teacher_id)}}</td>
                                     <td>{{ $deadline->duedate }}</td>
-                                    <td>{{ $deadline->categorie }}</td>
+                                    <td>{{ $deadline->Exam($deadline->exam_method_id)}}</td>
                                     <td>
                                         <ul>
                                             @foreach($deadline->tags as $tag)
