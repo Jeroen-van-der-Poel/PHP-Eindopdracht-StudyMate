@@ -40,8 +40,8 @@
                     <div class="form-group row">
                         <label for="coordinator" class="col-md-4 col-form-label pl-0">Coördinator</label>
                         <select name="coordinator" class="form-control">
-                            @foreach($teachers as $teacher)
-                                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                            @foreach($teachers as  $teacher)
+                                <option value="{{$teacher->id}}" {{$teacher->id == $course->coordinator  ? 'selected' : ''}}>{{$teacher->name}}</option>
                             @endforeach
                         </select>
                         @error('coordinator')
@@ -55,7 +55,7 @@
                         <label for="test_method" class="col-md-4 col-form-label pl-0">Soort Examen</label>
                         <select name="test_method" class="form-control">
                             @foreach($exam_methods as $exam_method)
-                                <option value="{{ $exam_method->id }}">{{ $exam_method->title }}</option>
+                                <option value="{{ $exam_method->id }}" {{$exam_method->id == $course->exam_method_id  ? 'selected' : ''}}>{{ $exam_method->title }}</option>
                             @endforeach
                         </select>
                         @error('test_method')
