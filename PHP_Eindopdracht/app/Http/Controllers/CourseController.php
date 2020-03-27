@@ -22,6 +22,7 @@ class CourseController extends Controller
             'name' => $request->name,
             'period' => $request->period,
             'coordinator' => $request->input('coordinator'),
+            'teacher' => $request->input('teacher'),
             'exam_method_id' => $request->input('test_method'),
             'study_points' => $request->study_points,
         ]);
@@ -53,6 +54,7 @@ class CourseController extends Controller
             'name' => $request->name,
             'period' => $request->period,
             'coordinator' => $request->input('coordinator'),
+            'teacher' => $request->input('teacher'),
             'exam_method_id' => $request->input('test_method'),
             'study_points' => $request->study_points,
         ]);

@@ -43,7 +43,7 @@
                                         {{ method_field('DELETE') }}
 
                                         <div class="form-group d-flex">
-                                            <input type="submit" class="btn btn-danger delete-user" value="verwijderen">
+                                            <input type="submit" class="btn btn-danger delete-user" value="Verwijderen">
                                         </div>
                                     </form>
                                 </td>
@@ -70,6 +70,7 @@
                             <th>Naam</th>
                             <th>Blok</th>
                             <th>Coördinator</th>
+                            <th>Docent</th>
                             <th>Soort examen</th>
                             <th>Studiepunten</th>
                             <th>Cijfer</th>
@@ -85,6 +86,7 @@
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->period }}</td>
                                 <td>{{ $course->Coordinator($course->coordinator) }}</td>
+                                <td>{{ $course->CurrentTeacher($course->teacher) }}</td>
                                 <td>{{ $course->Exam($course->exam_method_id)}}</td>
                                 <td>{{ $course->study_points}}</td>
                                 <td>{{ $course->grade}}</td>

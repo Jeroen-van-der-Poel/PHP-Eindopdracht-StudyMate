@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->integer('year')->nullable();
             $table->integer('period');
             $table->unsignedBigInteger('coordinator');
+            $table->unsignedBigInteger('teacher');
             $table->unsignedBigInteger('exam_method_id');
             $table->decimal('study_points');
             $table->decimal('points_received')->nullable();
@@ -27,6 +28,7 @@ class CreateCoursesTable extends Migration
             $table->timestamps();
 
             $table->foreign('coordinator')->references('id')->on('teachers')->onDelete('cascade');
+            $table->foreign('teacher')->references('id')->on('teachers')->onDelete('cascade');
         });
     }
 
