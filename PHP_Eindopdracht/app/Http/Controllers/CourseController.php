@@ -31,7 +31,7 @@ class CourseController extends Controller
         $yearValue = $this->checkCoursePeriod($request->period);
         $course->year = $yearValue;
         $course->save();
-        
+
         return redirect('/admin');
     }
 
@@ -40,10 +40,8 @@ class CourseController extends Controller
         $teachers = Teacher::orderBy('id', 'desc')->get();
         $exam_methods = ExamMethod::all();
         $teachers2 = [];
-        $count = 0;
         foreach ($course->teachers as $teacher){
             $teachers2[$teacher->id] = $teacher;
-            $count++;
         }
         return view('Course/edit', compact('course', 'teachers', 'exam_methods' , 'teachers2'));
     }

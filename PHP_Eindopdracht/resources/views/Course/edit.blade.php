@@ -80,8 +80,8 @@
                     <div class="form-group row">
                         <label for="teachers_course" class="col-md-4 col-form-label pl-0">Docenten</label>
                         <select name="teachers_course[]" class="form-control" multiple>
-                            @foreach($teachers as $key => $teacher)
-                                @if(array_key_exists($key, $teachers2))
+                            @foreach($teachers as $teacher)
+                                @if(array_key_exists($teacher->id, $teachers2))
                                     <option value="{{ $teacher->id }}" selected>{{ $teacher->name }}</option>
                                 @else
                                     <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
