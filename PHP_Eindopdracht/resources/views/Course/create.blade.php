@@ -85,7 +85,7 @@
                             @endforeach
                         </select>
 
-                        @error('tags')
+                        @error('teachers_course')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

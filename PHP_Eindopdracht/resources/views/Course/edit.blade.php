@@ -77,6 +77,22 @@
                         @enderror
                     </div>
 
+                    <div class="form-group row">
+                        <label for="teachers_course" class="col-md-4 col-form-label pl-0">Docenten</label>
+                        <select name="teachers_course[]" class="form-control" multiple>
+                            @foreach($teachers as $teacher)
+                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('teachers_course')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+
                     <div class="form-group row pt-4 pb-5">
                         <button class="btn btn-primary">Opslaan</button>
                     </div>

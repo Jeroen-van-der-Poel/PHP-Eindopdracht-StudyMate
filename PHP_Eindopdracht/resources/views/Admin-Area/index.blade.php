@@ -88,7 +88,16 @@
                                 <td>{{ $course->Exam($course->exam_method_id)}}</td>
                                 <td>{{ $course->study_points}}</td>
                                 <td>{{ $course->grade}}</td>
-                                <td>{{ $course->teachers()->pluck('name')->implode(' ') }}</td>
+                                <td>
+                                    <ul>
+                                        @foreach($course->teachers as $teacher)
+                                        <li>
+                                            {{ $teacher->name }}
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+
                                 <td>
                                     <form action="/editCourse/{{$course->id}}" method="GET">
                                         <div class="form-group">

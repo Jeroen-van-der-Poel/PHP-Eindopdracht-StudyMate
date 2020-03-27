@@ -58,9 +58,9 @@
                                 </td>
 
                                 <td>
-                                        <div class="form-group">
-                                            <input id="finished" type="checkbox" class="form-control" name="finished[]" value="{{ $deadline->id}} " style="height: 25px;">
-                                        </div>
+                                    <div class="form-group">
+                                        <input id="finished" type="checkbox" class="form-control" name="finished[]" value="{{ $deadline->id}} " style="height: 25px;">
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
