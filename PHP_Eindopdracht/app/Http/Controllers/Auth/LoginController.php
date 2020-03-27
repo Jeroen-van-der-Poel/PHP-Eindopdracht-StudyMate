@@ -47,14 +47,14 @@ class LoginController extends Controller
 
         foreach ($users as $user) {
             try { // required if the field is not encrypted
-                // login using username or email
+                // login using email
                 if (($field == $user->email) && \Hash::check($request->password, $user->password)) {
                     $isUserValidated=true;
                     $this->guard()->login($user,false);
-                    break; // Exit from the foreach loop
+                    break;
                 }
             } catch (DecryptException $e) {
-                // nothing
+
             }
         }
         return $isUserValidated;

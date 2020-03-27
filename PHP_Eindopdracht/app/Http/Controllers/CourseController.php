@@ -27,23 +27,11 @@ class CourseController extends Controller
         ]);
         $course = Course::orderBy('id', 'desc')->firstOrFail();
         $course->teachers()->attach(request('teachers_course'));
-        if($request->period == "1" ||$request->period == "2" ||$request->period == "3" ||$request->period == "4")
-        {
-            $course->year = 1;
-        }
-        else if($request->period == "5" ||$request->period == "6" ||$request->period == "7" ||$request->period == "8")
-        {
-            $course->year = 2;
-        }
-        else if($request->period == "9" ||$request->period == "10" ||$request->period == "11" ||$request->period == "12")
-        {
-            $course->year = 3;
-        }
-        else if($request->period == "13" ||$request->period == "14" ||$request->period == "15" ||$request->period == "16")
-        {
-            $course->year = 4;
-        }
+
+        $yearValue = $this->checkCoursePeriod($request->period);
+        $course->year = $yearValue;
         $course->save();
+        
         return redirect('/admin');
     }
 
@@ -93,4 +81,22 @@ class CourseController extends Controller
         return redirect('/admin');
     }
 
+    public function checkCoursePeriod($value){
+        if($value == "1" ||$value == "2" ||$value == "3" ||$value == "4")
+        {
+            return 1;
+        }
+        else if($value == "5" ||$value == "6" ||$value->period == "7" ||$value == "8")
+        {
+            return 2;
+        }
+        else if($value == "9" ||$value == "10" ||$value == "11" ||$value == "12")
+        {
+            return 3;
+        }
+        else if($value == "13" ||$value == "14" ||$value == "15" ||$value == "16")
+        {
+            return 4;
+        }
+    }
 }
