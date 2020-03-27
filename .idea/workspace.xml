@@ -129,10 +129,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht/public/uploads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PHP_Eindopdracht/resources/views/auth" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\views\auth" />
       <recent name="D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\public\uploads" />
       <recent name="D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\views\Course" />
     </key>
@@ -156,7 +157,7 @@
       <workItem from="1585143581557" duration="9837000" />
       <workItem from="1585164847676" duration="1454000" />
       <workItem from="1585230750526" duration="3080000" />
-      <workItem from="1585305782559" duration="1480000" />
+      <workItem from="1585305782559" duration="4195000" />
     </task>
     <servers />
   </component>
@@ -168,10 +169,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="737" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585147591927" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585235757253">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585311246816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585235757253" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585311246816" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584906980191" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584899839134">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -182,10 +183,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584901222935" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585170039529">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585308146402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585170039529" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585308146402" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

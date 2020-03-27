@@ -13,34 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'DashboardController@index')->name('Dashboard');;
+
 
 Auth::routes();
-
+Route::get('/', 'DashboardController@index')->name('Dashboard');;
 Route::get('/home', 'DashboardController@index');
-Route::get('/admin', 'AdminController@index');
+Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');
+Route::get('/auth/unauthorized', 'UnauthorizedController@index');
 
-Route::get('/addTeacher', 'TeacherController@create');
-Route::post('/teacher', 'TeacherController@store');
-Route::get('/editTeacher/{id}', 'TeacherController@edit');
-Route::patch('/editTeacher/{id}', 'TeacherController@update');
-Route::delete('/teacher/{id}', 'TeacherController@destroy')->name('teacher.destroyTeacher');
+Route::group(['middleware' => 'admin'], function(){
+    Route::get('/admin', 'AdminController@index');
 
-Route::get('/addCourse', 'CourseController@create');
-Route::post('/course', 'CourseController@store');
-Route::post('/giveGrade/{id}', 'CourseController@giveGrade');
-Route::get('/editCourse/{id}', 'CourseController@edit');
-Route::patch('/editCourse/{id}', 'CourseController@update');
-Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');
+    Route::get('/addTeacher', 'TeacherController@create');
+    Route::post('/teacher', 'TeacherController@store');
+    Route::get('/editTeacher/{id}', 'TeacherController@edit');
+    Route::patch('/editTeacher/{id}', 'TeacherController@update');
+    Route::delete('/teacher/{id}', 'TeacherController@destroy')->name('teacher.destroyTeacher');
 
-Route::post('/upload/{id}', 'UploadController@store');
+    Route::get('/addCourse', 'CourseController@create');
+    Route::post('/course', 'CourseController@store');
+    Route::post('/giveGrade/{id}', 'CourseController@giveGrade');
+    Route::get('/editCourse/{id}', 'CourseController@edit');
+    Route::patch('/editCourse/{id}', 'CourseController@update');
+    Route::delete('/course/{id}', 'CourseController@destroy')->name('course.destroyCourse');
 
-Route::patch('/assign_teachers_course/{id}', 'CourseController@assignTeachersToCourse');
+    Route::post('/upload/{id}', 'UploadController@store');
+});
 
+Route::group(['middleware' => 'manager'], function(){
+    Route::get('/deadline', 'DeadlineController@index');
+    Route::get('/addDeadline', 'DeadlineController@create');
+    Route::post('/deadline', 'DeadlineController@store');
+    Route::patch('/deadline/finish', 'DeadlineController@finish');
+});
 
-Route::get('/deadline', 'DeadlineController@index');
-Route::get('/addDeadline', 'DeadlineController@create');
-Route::post('/deadline', 'DeadlineController@store');
-Route::patch('/deadline/finish', 'DeadlineController@finish');
-
-Route::get('/dashboard', 'DashboardController@index')->name('Dashboard');;
