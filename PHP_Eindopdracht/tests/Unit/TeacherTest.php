@@ -3,9 +3,10 @@
 namespace Tests\Unit;
 
 use App\Course;
+use App\Http\Controllers\DashboardController;
 use App\Teacher;
 use App\User;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class TeacherTest extends TestCase
 {
@@ -14,55 +15,29 @@ class TeacherTest extends TestCase
      *
      * @return void
      */
-/*    private $user;
-
-
-    public function setUp()
-    {
-        parent::setUp();
-
-        $this->user = User::first();
-
-    }*/
 
     public function testExample()
     {
         $this->assertTrue(true);
     }
 
-/*    public function testWhen_TeacherGiven_Expect_TeacherWithEmail()
+    public function test_Teacher_name_isCorrect()
     {
         $teacher = new Teacher();
+        $name = "Bas";
 
-        $teacher->setEmailAttribute('jasper@example.com');
+        $teacher->name = $name;
 
-
-        $this->assertEquals('jasper@example.com', $teacher->getEmailAttribute('jasper@example.com'));
-    }*/
-
-    public function testWhen_CourseGiven_Expect_Course()
-    {
-        $teacher = new Teacher();
-        $teacher->id = 1;
-        $teacher->name = 'Jasper';
-
-        $course = new Course();
-        $course->id = 1;
-        $course->name = 'webphp';
-        $course->period = 1;
-        $course->year = 1;
-        $course->coordinator = $teacher->id;
-        $course->teacher = $teacher->id;
-        $course->exam_method_id = 1;
-        $course->study->points = 2;
-
-        $this->assertEquals('2', $course->getTotalBlockPoints($course->year, $course->period));
+        $this->assertEquals($name, $teacher->name);
     }
 
-    public function testWhen_UserGiven_ExpectUserAdmin()
+    public function test_Teacher_name_isNotCorrect()
     {
-/*        $user = User::orderBy('id', 'desc')->firstOrFail()->get();*/
+        $teacher = new Teacher();
+        $name = "Bas";
 
-        $this->assertEquals('Admin', $this->user->roles->name);
+        $teacher->name = "Frans";
+
+        $this->assertNotEquals($name, $teacher->name);
     }
 }
