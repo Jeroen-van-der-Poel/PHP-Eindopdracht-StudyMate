@@ -4,6 +4,7 @@ namespace Tests\Browser;
 
 use App\Course;
 use App\Teacher;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
@@ -20,7 +21,8 @@ class DeadlineTest extends DuskTestCase
     public function test_CanAddDeadline()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/addDeadline')
+            $browser->loginAs(User::find(2))
+                ->visit('/addDeadline')
                 ->assertSee('Deadline aanmaken')
                 ->type('title', 'TestDeadline')
                 ->select('teacher_id')
@@ -39,7 +41,8 @@ class DeadlineTest extends DuskTestCase
     public function test_checkbox()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/deadline')
+            $browser->loginAs(User::find(2))
+                ->visit('/deadline')
                 ->check('finished[]')
                 ->press('Opslaan')
                 ->assertPathIs('/deadline');

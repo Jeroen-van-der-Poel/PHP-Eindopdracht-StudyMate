@@ -17,6 +17,15 @@ class Course extends Model
         }
     }
 
+    public function CurrentTeacher($id){
+        if($id != ""){
+            return Teacher::where('id', $id)->firstOrFail()->name;
+        }
+        else {
+            return "";
+        }
+    }
+
     public function Exam($id){
         if($id != ""){
             return ExamMethod::where('id', $id)->firstOrFail()->title;
@@ -25,6 +34,7 @@ class Course extends Model
             return "";
         }
     }
+
 
     public function teachers()
     {
