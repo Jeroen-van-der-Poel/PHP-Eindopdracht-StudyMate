@@ -2,6 +2,7 @@
 
 namespace Tests\Browser;
 
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
@@ -17,7 +18,8 @@ class AdminTest extends DuskTestCase
     public function test_create_teacher()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/addTeacher')
+            $browser->loginAs(User::find(1))
+                ->visit('/addTeacher')
                 ->assertSee('Docent Aanmaken')
                 ->type('name', 'testTeacher')
                 ->type('email', 'test@mail.com')
@@ -29,7 +31,8 @@ class AdminTest extends DuskTestCase
     public function test_create_course()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/addCourse')
+            $browser->loginAs(User::find(1))
+                ->visit('/addCourse')
                 ->assertSee('Course Aanmaken')
                 ->type('name', 'testCourse')
                 ->type('period', '7')
