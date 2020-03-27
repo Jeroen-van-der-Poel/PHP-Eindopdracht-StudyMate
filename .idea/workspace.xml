@@ -138,9 +138,25 @@
       <recent name="D:\Github\PHP_Eindopdracht\PHP_Eindopdracht\resources\views\Course" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TeacherTest.testExample">
+  <component name="RunManager" selected="PHPUnit.TeacherTest.testWhen_CourseGiven_Expect_Course">
+    <configuration name="TeacherTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\TeacherTest" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Unit/TeacherTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="TeacherTest.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\TeacherTest" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Unit/TeacherTest.php" method="testExample" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TeacherTest.testWhen_CourseGiven_Expect_Course" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\TeacherTest" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Unit/TeacherTest.php" method="testWhen_CourseGiven_Expect_Course" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TeacherTest.testWhen_TeacherGiven_Expect_TeacherWithEmail" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\TeacherTest" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Unit/TeacherTest.php" method="testWhen_TeacherGiven_Expect_TeacherWithEmail" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TeacherTest.testWhen_UserGiven_ExpectUserAdmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\TeacherTest" file="$PROJECT_DIR$/PHP_Eindopdracht/tests/Unit/TeacherTest.php" method="testWhen_UserGiven_ExpectUserAdmin" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -150,10 +166,18 @@
     <list>
       <item itemvalue="PHPUnit.tests" />
       <item itemvalue="PHPUnit.TeacherTest.testExample" />
+      <item itemvalue="PHPUnit.TeacherTest" />
+      <item itemvalue="PHPUnit.TeacherTest.testWhen_TeacherGiven_Expect_TeacherWithEmail" />
+      <item itemvalue="PHPUnit.TeacherTest.testWhen_CourseGiven_Expect_Course" />
+      <item itemvalue="PHPUnit.TeacherTest.testWhen_UserGiven_ExpectUserAdmin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TeacherTest.testWhen_CourseGiven_Expect_Course" />
+        <item itemvalue="PHPUnit.TeacherTest.testWhen_UserGiven_ExpectUserAdmin" />
         <item itemvalue="PHPUnit.TeacherTest.testExample" />
+        <item itemvalue="PHPUnit.TeacherTest.testWhen_TeacherGiven_Expect_TeacherWithEmail" />
+        <item itemvalue="PHPUnit.TeacherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -210,22 +234,38 @@
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585314340141" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584899839134" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585314477679">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585319493549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585314477679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585314477679">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585319493549" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585319493549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585314477679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585314477679">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585319493549" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585319493549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585314477679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585314477679">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585319493549" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585319493549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585314477679" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585319493549" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585318028977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585318028977" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585318028977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585318028977" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585318028977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585318028977" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585318028977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585318028977" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584901222935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
