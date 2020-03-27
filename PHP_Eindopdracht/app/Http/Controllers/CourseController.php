@@ -95,7 +95,7 @@ class CourseController extends Controller
         {
             return 1;
         }
-        else if($value == "5" ||$value == "6" ||$value->period == "7" ||$value == "8")
+        else if($value == "5" ||$value == "6" ||$value == "7" ||$value == "8")
         {
             return 2;
         }
