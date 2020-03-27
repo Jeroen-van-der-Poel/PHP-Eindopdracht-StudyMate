@@ -137,7 +137,7 @@
                                         </div>
                                     </div>
 
-                                    @if($course->Exam($course->exam_method_id) == "Individueel Assessment")
+                                    @if($course->Exam($course->exam_method_id) == "Assessment")
                                         @if(!$course->file)
                                             <!-- Button trigger modal -->
                                             <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit{{$course->id}}">
