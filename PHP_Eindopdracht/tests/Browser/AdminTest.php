@@ -21,7 +21,6 @@ class AdminTest extends DuskTestCase
                 ->assertSee('Docent Aanmaken')
                 ->type('name', 'testTeacher')
                 ->type('email', 'test@mail.com')
-                ->type('phone_number', '0689231100')
                 ->press('Docent Opslaan')
                 ->assertPathIs('/admin');
         });

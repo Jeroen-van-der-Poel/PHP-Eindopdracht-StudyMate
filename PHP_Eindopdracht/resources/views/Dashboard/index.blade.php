@@ -44,7 +44,7 @@
                         @foreach($courses as $course)
                             @if($course->year == $period)
                                 @if((($course->period-1) % 4) + 1 == $block)
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 overflow-hidden">
                                     {{ $course->name }}
                                 </div>
                                 <div class="col-lg-3 ml-1">
