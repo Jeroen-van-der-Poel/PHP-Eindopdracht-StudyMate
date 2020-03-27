@@ -35,7 +35,6 @@ class Course extends Model
         }
     }
 
-
     public function teachers()
     {
         return $this->BelongsToMany(Teacher::class);

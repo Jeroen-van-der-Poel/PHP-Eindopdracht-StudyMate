@@ -45,4 +45,44 @@ class TeacherTest extends TestCase
         $this->assertNotEquals($name, $teacher->name);
     }
 
+    public function test_HasTaught_ReceiveCorrect()
+    {
+        //Arrange
+        $teacher = new Teacher();
+        $name = "Bas";
+
+        //Act
+        $teacher->name = $name;
+
+        //Assert
+        $this->assertEquals("Nee", $teacher->HasTaught());
+    }
+
+    public function test_HasTaught_ReceiveCorrect_withInput()
+    {
+        //Arrange
+        $teacher = new Teacher();
+        $name = "Bas";
+
+        //Act
+        $teacher->name = $name;
+        $teacher->has_taught = 1;
+
+        //Assert
+        $this->assertEquals("Ja", $teacher->HasTaught());
+    }
+
+    public function test_HasTaught_Receive_NotCorrect()
+    {
+        //Arrange
+        $teacher = new Teacher();
+        $name = "Bas";
+
+        //Act
+        $teacher->name = $name;
+
+        //Assert
+        $this->assertNotEquals("Ja", $teacher->HasTaught());
+    }
+
 }
