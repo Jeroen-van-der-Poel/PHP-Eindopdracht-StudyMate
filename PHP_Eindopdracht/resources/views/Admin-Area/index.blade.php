@@ -115,7 +115,7 @@
                                     </form>
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#grade{{$course->id}}">
+                                    <button type="button" class="btn btn-primary d-flex float-left" data-toggle="modal" data-target="#grade{{$course->id}}">
                                         Cijfer
                                     </button>
 
@@ -149,7 +149,7 @@
                                     @if($course->Exam($course->exam_method_id) == "Assessment")
                                         @if(!$course->file)
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary d-flex float-right" data-toggle="modal" data-target="#edit{{$course->id}}">
+                                            <button type="button" class="btn btn-primary d-flex" data-toggle="modal" data-target="#edit{{$course->id}}">
                                                 Upload
                                             </button>
 
