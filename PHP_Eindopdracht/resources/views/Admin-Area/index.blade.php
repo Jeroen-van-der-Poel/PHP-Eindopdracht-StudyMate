@@ -68,7 +68,7 @@
                         <thead>
                         <tr>
                             <th>Naam</th>
-                            <th>Periode</th>
+                            <th>Blok</th>
                             <th>Coördinator</th>
                             <th>Soort examen</th>
                             <th>Studiepunten</th>

@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="period" class="col-md-4 col-form-label pl-0">Periode</label>
+                        <label for="period" class="col-md-4 col-form-label pl-0">Blok</label>
 
                         <input id="period" type="number" class="form-control @error('period') is-invalid @enderror" name="period" value="{{ old('period') ?? $course->period }}" required autocomplete="period" autofocus>
 
