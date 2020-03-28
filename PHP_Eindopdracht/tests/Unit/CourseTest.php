@@ -85,7 +85,7 @@ class CourseTest extends TestCase
         $this->assertEquals($count, $course->getTotalReceivableBlockPoints($year, $block));
     }
 
-    public function test_Totalpointspossible_totalpointsgot_notCorract()
+    public function test_Totalpointspossible_totalpointsgot_notCorrect()
     {
         //Arrange
         $course = new Course();
