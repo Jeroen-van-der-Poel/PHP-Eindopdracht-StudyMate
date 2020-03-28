@@ -27,7 +27,7 @@ class DeadlineTest extends DuskTestCase
                 ->type('title', 'TestDeadline')
                 ->select('teacher_id')
                 ->select('course_id')
-                ->type('duedate', '5')
+                ->type('duedate', '7')
                 ->type('duedate', '4')
                 ->type('duedate', '2020')
                 ->keys('#duedate', ['{tab}'])
