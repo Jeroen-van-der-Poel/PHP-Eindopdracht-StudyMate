@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Course;
 use App\ExamMethod;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Teacher;
 use App\User;
@@ -106,7 +107,30 @@ class CourseTest extends TestCase
         //Assert
         $this->assertNotEquals($count+1, $course->getTotalReceivableBlockPoints($year, $block));
     }
-    
+
+    public function test_checkCoursePeriod_Correct()
+    {
+        //Arrange
+        $controller = new CourseController();
+        $value = 1;
+
+        //Act
+
+        //Assert
+        $this->assertEquals(1, $controller->checkCoursePeriod($value));
+    }
+
+    public function test_checkCoursePeriod_notCorrect()
+    {
+        //Arrange
+        $controller = new CourseController();
+        $value = 1;
+
+        //Act
+
+        //Assert
+        $this->assertNotEquals(2, $controller->checkCoursePeriod($value));
+    }
 }
 
 

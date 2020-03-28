@@ -6,7 +6,7 @@
         <form action="/course" enctype="multipart/form-data" method="post">
             @csrf
 
-            <div class="">
+            <div>
                 <div class="col-6 offset-3">
 
                     <div class="form-group row">

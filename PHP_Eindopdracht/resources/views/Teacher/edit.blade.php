@@ -5,7 +5,7 @@
             @csrf
             @method('PATCH')
 
-            <div class="">
+            <div>
                 <div class="col-6 offset-3">
 
                     <div class="form-group row">
