@@ -22,7 +22,7 @@
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
                     <div class="card-header d-flex justify-content-between">
-                        <span><i class="fas fa-clock"></i>Openstaande deadlines</span>
+                        <span><i class="fas fa-clock"></i>Aankomende deadlines</span>
                         <span><a href="/addDeadline">Deadline Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">

@@ -17,10 +17,10 @@ class DeadlineController extends Controller
         $datetime = Carbon::now();
 
         if(request('sort')){
-            $deadlines = Deadline::orderBy(request('sort'), 'asc')->wherenull('finished')->get();
+            $deadlines = Deadline::orderBy(request('sort'), 'asc')->wherenull('finished')->where('duedate', '>=', $datetime)->get();
             $finisheddeadlines = Deadline::orderBy(request('sort'), 'asc')->whereNotNull('finished')->get();
         }else{
-            $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->get();
+            $deadlines = Deadline::orderBy('duedate', 'asc')->wherenull('finished')->where('duedate', '>=', $datetime)->get();
             $finisheddeadlines = Deadline::orderBy('finished', 'asc')->whereNotNull('finished')->get();
         }
 
@@ -45,8 +45,8 @@ class DeadlineController extends Controller
         $this->validateDeadline();
 
         $deadline = new Deadline(request(['title', 'teacher_id', 'course_id', 'duedate', 'exam_method_id']));
+        $deadline->exam_method_id = $this->getCourseExam($deadline->course_id);
         $deadline->save();
-
         $deadline->tags()->attach(request('tags'));
 
         return redirect('/deadline');
@@ -58,8 +58,7 @@ class DeadlineController extends Controller
             'title' => 'required',
             'teacher_id' => 'required',
             'course_id' => 'required',
-            'duedate' => 'required',
-            'exam_method_id' => 'required',
+            'duedate' => 'required|after:1 hour',
             'tags' => 'exists:tags,id',
         ]);
     }
@@ -80,6 +79,13 @@ class DeadlineController extends Controller
             }
         }
         return redirect('/deadline');
+    }
+
+    public function getCourseExam($id)
+    {
+        $course = Course::findOrFail($id);
+        $exam = $course->exam_method_id;
+        return $exam;
     }
 
 }

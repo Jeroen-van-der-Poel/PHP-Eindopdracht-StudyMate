@@ -66,7 +66,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group row">
+{{--                    <div class="form-group row">
                         <label for="exam_method_id" class="col-md-4 col-form-label pl-0">exam_method_id</label>
                         <select name="exam_method_id" class="form-control">
                             @foreach($exam_methods as $exam_method)
@@ -79,7 +79,7 @@
                                  <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div>
+                    </div>--}}
 
                     <div class="form-group row">
                         <label for="tags" class="col-md-4 col-form-label pl-0">Tags</label>
