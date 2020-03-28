@@ -46,21 +46,21 @@
             </li>
 
             <li class="nav-itemx">
-                <a href="/dashboard" class="nav-linkx">
+                <a href="../dashboard" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-chart-line"></span></i>
                     <span class="link-text">Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-itemx">
-                <a href="/admin" class="nav-linkx">
+                <a href="../admin" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-tools"></span></i>
                     <span class="link-text">Admin Area</span>
                 </a>
             </li>
 
             <li class="nav-itemx">
-                <a href="/deadline" class="nav-linkx">
+                <a href="../deadline" class="nav-linkx">
                     <i class="material-icons"><span class="fas fa-tasks"></span></i>
                     <span class="link-text">Deadline Manager</span>
                 </a>
