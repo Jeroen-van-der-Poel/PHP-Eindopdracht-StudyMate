@@ -60,7 +60,7 @@
             <div class="col-lg-12 col-lg-offset-1">
                 <div class="table-responsive">
                         <div class="card-header d-flex justify-content-between">
-                            <span><i class="fas fa-users"></i>Course overzicht</span>
+                            <span><i class="fas fa-book"></i>Course overzicht</span>
                             <span><a href="/addCourse">Course Toevoegen</a></span>
                     </div>
                     <table class="table table-bordered table-striped">
