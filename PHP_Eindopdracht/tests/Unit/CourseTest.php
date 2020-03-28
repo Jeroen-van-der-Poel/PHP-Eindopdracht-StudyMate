@@ -106,42 +106,7 @@ class CourseTest extends TestCase
         //Assert
         $this->assertNotEquals($count+1, $course->getTotalReceivableBlockPoints($year, $block));
     }
-
-/*    public function test_giveId_receiveTitle()
-    {
-        //Arrange
-        $course = new Course();
-        $course->exam_method_id = 1;
-
-        //Act
-
-        //Assert
-        $this->assertEquals("Assessment", $course->Exam($course->exam_method_id));
-    }*/
-
-/*    public function test_giveId_receiveTeacher()
-    {
-        //Arrange
-        $name = "frans";
-
-        $teacher = new Teacher();
-        $teacher->id = 99;
-        $teacher->name = $name;
-
-        $course = new Course();
-        $course->name = "webphp";
-        $course->period = 1;
-        $course->year = 1;
-        $course->coordinator = $teacher->id;
-        $course->teacher = $teacher->id;
-        $course->exam_method_id = 1;
-        $course->study_points = 2;
-
-        //Act
-
-        //Assert
-        $this->assertEquals($name, $course->Coordinator($course->coordinator));
-    }*/
+    
 }
 
 
