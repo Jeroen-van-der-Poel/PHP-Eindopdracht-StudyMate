@@ -32,7 +32,6 @@ class DeadlineTest extends DuskTestCase
                 ->type('duedate', '2020')
                 ->keys('#duedate', ['{tab}'])
                 ->type('duedate', '2222')
-                ->select('exam_method_id')
                 ->press('Deadline Opslaan')
                 ->assertPathIs('/deadline');
         });
